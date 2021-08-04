@@ -1,0 +1,40 @@
+{
+    "name": "kodjunkie/onesignal-php-sdk",
+    "description": "OneSignal SDK for PHP developers and supports Laravel / Lumen out of the box.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lawrence Onah",
+            "email": "paplow01@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Kodjunkie\\OnesignalPhpSdk\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.3",
+        "illuminate/support": "^8.53",
+        "guzzlehttp/guzzle": "^7.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "mockery/mockery": "^1.4"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kodjunkie\\OnesignalPhpSdk\\Laravel\\OneSignalSDKServiceProvider"
+            ],
+            "aliases": {
+                "OneSignal": "Kodjunkie\\OnesignalPhpSdk\\Laravel\\Facade"
+            }
+        }
+    }
+}
