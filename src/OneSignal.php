@@ -2,14 +2,15 @@
 
 namespace Kodjunkie\OnesignalPhpSdk;
 
-use Kodjunkie\OnesignalPhpSdk\Methods\App;
+use Kodjunkie\OnesignalPhpSdk\Clients\GuzzleHttpClient;
+use Kodjunkie\OnesignalPhpSdk\Api\App;
 
 class OneSignal
 {
     /**
      * @var string
      */
-    protected $config;
+    private $config;
 
     /**
      * @param array $config
@@ -34,7 +35,7 @@ class OneSignal
      */
     public function make($classname)
     {
-        $Class = "\\Kodjunkie\\OnesignalPhpSdk\\Methods\\" . ucfirst($classname);
-        return new $Class($this->config);
+        $Classname = "\\Kodjunkie\\OnesignalPhpSdk\\Api\\" . ucfirst($classname);
+        return new $Classname(new GuzzleHttpClient(), $this->config);
     }
 }
