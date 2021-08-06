@@ -6,7 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
 
 /**
- * Class OneSignalServiceProvider.
+ * Class OneSignalSDKServiceProvider.
  */
 class OneSignalSDKServiceProvider extends ServiceProvider
 {
@@ -22,7 +22,7 @@ class OneSignalSDKServiceProvider extends ServiceProvider
     }
 
     /**
-     * Setup the configuration.
+     * Set up the configuration.
      */
     protected function configure()
     {
@@ -52,7 +52,7 @@ class OneSignalSDKServiceProvider extends ServiceProvider
      *
      * @return array
      */
-    public function provides()
+    public function provides(): array
     {
         return [OneSignal::class, 'onesignal'];
     }
