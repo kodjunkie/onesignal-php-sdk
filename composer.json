@@ -30,10 +30,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kodjunkie\\OnesignalPhpSdk\\Laravel\\OneSignalSDKServiceProvider"
+                "Kodjunkie\\OnesignalPhpSdk\\OneSignalServiceProvider"
             ],
             "aliases": {
-                "OneSignal": "Kodjunkie\\OnesignalPhpSdk\\Laravel\\Facade"
+                "OneSignal": "Kodjunkie\\OnesignalPhpSdk\\Facade"
             }
         }
     }

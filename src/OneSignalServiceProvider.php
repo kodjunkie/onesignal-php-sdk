@@ -1,14 +1,13 @@
 <?php
 
-namespace Kodjunkie\OnesignalPhpSdk\Laravel;
+namespace Kodjunkie\OnesignalPhpSdk;
 
 use Illuminate\Support\ServiceProvider;
-use Kodjunkie\OnesignalPhpSdk\OneSignal;
 
 /**
- * Class OneSignalSDKServiceProvider.
+ * Class OneSignalServiceProvider.
  */
-class OneSignalSDKServiceProvider extends ServiceProvider
+class OneSignalServiceProvider extends ServiceProvider
 {
     /**
      * Register the service provider.
@@ -28,7 +27,7 @@ class OneSignalSDKServiceProvider extends ServiceProvider
     {
         if ($this->app instanceof \Illuminate\Foundation\Application) {
             $this->publishes([
-                __DIR__ . '/config.php' => config_path('onesignal.php')
+                __DIR__ . '../../config/onesignal.php' => config_path('onesignal.php')
             ], 'config');
         } elseif ($this->app instanceof \Laravel\Lumen\Application) {
             $this->app->configure('onesignal');
@@ -40,11 +39,11 @@ class OneSignalSDKServiceProvider extends ServiceProvider
      */
     protected function registerBindings()
     {
-        $this->app->alias(OneSignal::class, 'onesignal');
-
-        $this->app->singleton('onesignal', function () {
+        $this->app->singleton(OneSignal::class, function () {
             return new OneSignal(config('onesignal'));
         });
+
+        $this->app->alias(OneSignal::class, 'onesignal');
     }
 
     /**
