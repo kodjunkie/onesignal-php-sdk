@@ -5,10 +5,10 @@ namespace Kodjunkie\OnesignalPhpSdk;
 use Exception;
 use Throwable;
 
-class OneSignalSDKException extends Exception
+class OneSignalException extends Exception
 {
     /**
-     * OneSignalSDKException constructor.
+     * OneSignalException constructor.
      * @param string $message
      * @param int $code
      * @param Throwable|null $previous

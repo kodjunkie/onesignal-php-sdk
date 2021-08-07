@@ -4,7 +4,7 @@ namespace Kodjunkie\OnesignalPhpSdk\Clients;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Kodjunkie\OnesignalPhpSdk\OneSignalSDKException;
+use Kodjunkie\OnesignalPhpSdk\OneSignalException;
 use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
@@ -37,7 +37,7 @@ class GuzzleHttpClient implements HttpClient
      * @param string $url
      * @param array $params
      * @return string
-     * @throws OneSignalSDKException
+     * @throws OneSignalException
      */
     public function get(string $url, array $params = []): string
     {
@@ -48,7 +48,7 @@ class GuzzleHttpClient implements HttpClient
      * @param string $url
      * @param array $data
      * @return string
-     * @throws OneSignalSDKException
+     * @throws OneSignalException
      */
     public function post(string $url, array $data = []): string
     {
@@ -59,7 +59,7 @@ class GuzzleHttpClient implements HttpClient
      * @param string $url
      * @param array $data
      * @return string
-     * @throws OneSignalSDKException
+     * @throws OneSignalException
      */
     public function put(string $url, array $data = []): string
     {
@@ -70,7 +70,7 @@ class GuzzleHttpClient implements HttpClient
      * @param string $url
      * @param array $params
      * @return string
-     * @throws OneSignalSDKException
+     * @throws OneSignalException
      */
     public function delete(string $url, array $params = []): string
     {
@@ -99,7 +99,7 @@ class GuzzleHttpClient implements HttpClient
      * @param string $uri
      * @param array $options
      * @return string
-     * @throws OneSignalSDKException
+     * @throws OneSignalException
      */
     private function request(string $method, string $uri, array $options = []): string
     {
@@ -113,7 +113,7 @@ class GuzzleHttpClient implements HttpClient
             }
 
             if ($response instanceof ResponseInterface) {
-                throw new OneSignalSDKException($exception->getMessage(), $exception->getCode(), $exception);
+                throw new OneSignalException($exception->getMessage(), $exception->getCode(), $exception);
             }
         }
 

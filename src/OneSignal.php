@@ -2,40 +2,26 @@
 
 namespace Kodjunkie\OnesignalPhpSdk;
 
-use Kodjunkie\OnesignalPhpSdk\Clients\GuzzleHttpClient;
-use Kodjunkie\OnesignalPhpSdk\Api\App;
+use Kodjunkie\OnesignalPhpSdk\Endpoints\App;
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
 
-class OneSignal
+class OneSignal extends Service
 {
-    /**
-     * @var string
-     */
-    private $config;
-
-    /**
-     * @param array $config
-     */
-    public function __construct(array $config = [])
-    {
-        $this->config = $config;
-    }
-
     /**
      * Apps API
      * @return App
      */
     public function apps(): App
     {
-        return $this->make('app');
+        return $this->build('app');
     }
 
     /**
-     * @param $classname
-     * @return mixed
+     * Device API
+     * @return Device
      */
-    public function make($classname)
+    public function devices(): Device
     {
-        $Classname = "\\Kodjunkie\\OnesignalPhpSdk\\Api\\" . ucfirst($classname);
-        return new $Classname(new GuzzleHttpClient(), $this->config);
+        return $this->build('device');
     }
 }

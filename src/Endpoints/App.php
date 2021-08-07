@@ -1,6 +1,6 @@
 <?php
 
-namespace Kodjunkie\OnesignalPhpSdk\Api;
+namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
 use Kodjunkie\OnesignalPhpSdk\Clients\HttpClient;
 
