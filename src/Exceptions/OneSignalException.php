@@ -1,11 +1,10 @@
 <?php
 
-namespace Kodjunkie\OnesignalPhpSdk;
+namespace Kodjunkie\OnesignalPhpSdk\Exceptions;
 
-use Exception;
 use Throwable;
 
-class OneSignalException extends Exception
+class OneSignalException extends \Exception
 {
     /**
      * OneSignalException constructor.

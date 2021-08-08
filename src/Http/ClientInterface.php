@@ -1,8 +1,8 @@
 <?php
 
-namespace Kodjunkie\OnesignalPhpSdk\Clients;
+namespace Kodjunkie\OnesignalPhpSdk\Http;
 
-interface HttpClient
+interface ClientInterface
 {
     /**
      * @return string
@@ -12,7 +12,7 @@ interface HttpClient
     /**
      * @param string $authKey
      */
-    public function setAuthKey(string $authKey): HttpClient;
+    public function setAuthKey(string $authKey): ClientInterface;
 
     /**
      * @param string $url

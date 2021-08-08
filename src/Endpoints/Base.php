@@ -2,7 +2,7 @@
 
 namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
-use Kodjunkie\OnesignalPhpSdk\Clients\HttpClient;
+use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
 
 abstract class Base
 {
@@ -12,15 +12,15 @@ abstract class Base
     protected $config;
 
     /**
-     * @var HttpClient
+     * @var ClientInterface
      */
     protected $client;
 
     /**
-     * @param HttpClient $client
+     * @param ClientInterface $client
      * @param array $config
      */
-    public function __construct(HttpClient $client, array $config = [])
+    public function __construct(ClientInterface $client, array $config = [])
     {
         $this->client = $client;
         $this->config = $config;

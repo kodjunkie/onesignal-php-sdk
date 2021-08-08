@@ -1,14 +1,14 @@
 <?php
 
-namespace Kodjunkie\OnesignalPhpSdk\Clients;
+namespace Kodjunkie\OnesignalPhpSdk\Http;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
-use Kodjunkie\OnesignalPhpSdk\OneSignalException;
+use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 use Psr\Http\Client\RequestExceptionInterface;
 use Psr\Http\Message\ResponseInterface;
 
-class GuzzleHttpClient implements HttpClient
+class GuzzleHttpClient implements ClientInterface
 {
     /**
      * @var string
@@ -25,9 +25,9 @@ class GuzzleHttpClient implements HttpClient
 
     /**
      * @param string $authKey
-     * @return HttpClient
+     * @return ClientInterface
      */
-    public function setAuthKey(string $authKey): HttpClient
+    public function setAuthKey(string $authKey): ClientInterface
     {
         $this->authKey = $authKey;
         return $this;
