@@ -10,8 +10,9 @@ class OneSignal extends Service
     /**
      * Apps API
      * @return App
+     * @throws Exceptions\InvalidEndpointException
      */
-    public function apps(): App
+    public function app(): App
     {
         return $this->build('app');
     }
@@ -19,8 +20,9 @@ class OneSignal extends Service
     /**
      * Device API
      * @return Device
+     * @throws Exceptions\InvalidEndpointException
      */
-    public function devices(): Device
+    public function device(): Device
     {
         return $this->build('device');
     }

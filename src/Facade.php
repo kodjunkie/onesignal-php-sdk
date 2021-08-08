@@ -3,8 +3,8 @@
 namespace Kodjunkie\OnesignalPhpSdk;
 
 /**
- * @method static OneSignal apps()
- * @method static void addMessage(mixed $message, string $label = 'info')
+ * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\App apps()
+ * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\Device devices()
  *
  * @see OneSignal
  */

@@ -2,7 +2,7 @@
 
 namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
-use Kodjunkie\OnesignalPhpSdk\Clients\HttpClient;
+use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
 
 class Device extends Base
 {
@@ -55,9 +55,9 @@ class Device extends Base
     }
 
     /**
-     * @return HttpClient
+     * @return ClientInterface
      */
-    private function client(): HttpClient
+    private function client(): ClientInterface
     {
         return $this->client->setAuthKey($this->config['api_key']);
     }

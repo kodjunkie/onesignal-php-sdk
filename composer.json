@@ -1,6 +1,6 @@
 {
     "name": "kodjunkie/onesignal-php-sdk",
-    "description": "OneSignal SDK for PHP developers and supports Laravel / Lumen out of the box.",
+    "description": "OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen out of the box.",
     "type": "library",
     "license": "MIT",
     "authors": [
