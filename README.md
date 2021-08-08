@@ -1,6 +1,6 @@
 # OneSignal PHP SDK
 
-OneSignal SDK for PHP developers with fluent APIs and supports Laravel / Lumen out of the box.
+OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen out of the box.
 
 - How to use this package? [Click here](https://github.com/kodjunkie/onesignal-php-sdk/tree/master/docs)
 - For Official documentation [click here](https://documentation.onesignal.com/reference)
@@ -17,7 +17,7 @@ composer require kodjunkie/onesignal-php-sdk
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
-use Kodjunkie\OnesignalPhpSdk\OneSignalException;
+use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 try {
     $config = [
@@ -31,7 +31,7 @@ try {
     
     // Using the API
     // Get all apps
-    $response = $oneSignal->apps()->getAll();
+    $response = $oneSignal->app()->getAll();
     
     // You can use json_decode() to get the response as an stdClass Object
     var_dump($response);
@@ -60,7 +60,7 @@ Lastly, use in your `controller` or wherever it's needed
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
-use Kodjunkie\OnesignalPhpSdk\OneSignalException;
+use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 try {
     // Initialize the SDK
@@ -69,10 +69,10 @@ try {
     
     // Using the API
     // Get all devices
-    $response = $oneSignal->devices()->getAll($appId, $limit, $offset);
+    $response = $oneSignal->device()->getAll($appId, $limit, $offset);
     
     // Using facade, the code above will look like this
-    $response = OneSignal::devices()->getAll($appId, $limit, $offset);
+    $response = OneSignal::device()->getAll($appId, $limit, $offset);
     
     dd($response);
 } catch (OneSignalException $exception) {
