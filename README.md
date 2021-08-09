@@ -64,20 +64,26 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 try {
     // Initialize the SDK
-    // Using dependency injection
+    // Resolve from the IoC container
     $oneSignal = app()->make('onesignal');
     
     // Using the API
     // Get all devices
     $response = $oneSignal->device()->getAll($appId, $limit, $offset);
     
-    // Using facade, the code above will look like this
+    // Using Facade, the code above will look like this
     $response = OneSignal::device()->getAll($appId, $limit, $offset);
     
     dd($response);
 } catch (OneSignalException $exception) {
     dd($exception->getMessage());
 }
+```
+
+## Tests
+
+```bash
+composer test
 ```
 
 ## License
