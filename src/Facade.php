@@ -3,8 +3,8 @@
 namespace Kodjunkie\OnesignalPhpSdk;
 
 /**
- * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\App apps()
- * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\Device devices()
+ * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\App app()
+ * @method static \Kodjunkie\OnesignalPhpSdk\Endpoints\Device device()
  *
  * @see OneSignal
  */
