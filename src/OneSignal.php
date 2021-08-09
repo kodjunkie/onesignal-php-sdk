@@ -8,9 +8,9 @@ use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
 class OneSignal extends Service
 {
     /**
-     * Apps API
+     * App API
      * @return App
-     * @throws Exceptions\InvalidEndpointException
+     * @throws Exceptions\OneSignalException
      */
     public function app(): App
     {
@@ -20,7 +20,7 @@ class OneSignal extends Service
     /**
      * Device API
      * @return Device
-     * @throws Exceptions\InvalidEndpointException
+     * @throws Exceptions\OneSignalException
      */
     public function device(): Device
     {

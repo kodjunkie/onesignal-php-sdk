@@ -21,7 +21,7 @@ abstract class Service
     }
 
     /**
-     * Build the endpoint
+     * Resolve the endpoint
      * @param $endpoint
      * @return mixed
      * @throws InvalidEndpointException
