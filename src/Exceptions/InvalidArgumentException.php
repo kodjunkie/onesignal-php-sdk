@@ -3,6 +3,6 @@
 namespace Kodjunkie\OnesignalPhpSdk\Exceptions;
 
 /*
- * InvalidEndpointException
+ * InvalidArgumentException
  */
-class InvalidEndpointException extends OneSignalException {}
+class InvalidArgumentException extends OneSignalException {}
