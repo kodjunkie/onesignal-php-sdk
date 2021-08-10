@@ -3,10 +3,9 @@
 namespace Kodjunkie\OnesignalPhpSdk\Http;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
-use Psr\Http\Client\RequestExceptionInterface;
-use Psr\Http\Message\ResponseInterface;
 
 class GuzzleHttpClient implements ClientInterface
 {
@@ -114,15 +113,10 @@ class GuzzleHttpClient implements ClientInterface
         try {
             $response = $this->client()->request($method, $uri, $options);
             $response = $response->getBody()->getContents();
-        } catch (GuzzleException $exception) {
-            $response = null;
-            if ($exception instanceof RequestExceptionInterface) {
-                $response = $exception->getResponse();
-            }
-
-            if ($response instanceof ResponseInterface) {
-                throw new OneSignalException($exception->getMessage(), $exception->getCode(), $exception);
-            }
+        } catch (ClientException $exception) {
+            $response = $exception->getResponse()->getBody()->getContents();
+        }catch (GuzzleException $exception) {
+            throw new OneSignalException($exception->getMessage(), $exception->getCode(), $exception);
         }
 
         return $response;

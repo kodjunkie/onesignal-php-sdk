@@ -5,7 +5,7 @@ namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
 
-class App extends Base
+class App extends AbstractBase
 {
     /**
      * View all apps

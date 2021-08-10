@@ -4,8 +4,10 @@ namespace Kodjunkie\OnesignalPhpSdk;
 
 use Kodjunkie\OnesignalPhpSdk\Endpoints\App;
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Segment;
 
-class OneSignal extends Service
+class OneSignal extends AbstractService
 {
     /**
      * App API
@@ -25,5 +27,25 @@ class OneSignal extends Service
     public function device(): Device
     {
         return $this->build('device');
+    }
+
+    /**
+     * Notification API
+     * @return Notification
+     * @throws Exceptions\OneSignalException
+     */
+    public function notification(): Notification
+    {
+        return $this->build('notification');
+    }
+
+    /**
+     * Segment API
+     * @return Segment
+     * @throws Exceptions\OneSignalException
+     */
+    public function segment(): Segment
+    {
+        return $this->build('segment');
     }
 }

@@ -6,7 +6,7 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidConfigurationException;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidEndpointException;
 use Kodjunkie\OnesignalPhpSdk\Http\GuzzleHttpClient;
 
-abstract class Service
+abstract class AbstractService
 {
     /**
      * @var string
