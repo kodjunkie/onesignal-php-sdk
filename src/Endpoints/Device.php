@@ -2,8 +2,6 @@
 
 namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
-use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
-
 class Device extends Base
 {
     const IOS = 0;
@@ -67,13 +65,5 @@ class Device extends Base
     public function edit(string $id, array $params): string
     {
         return $this->client()->put('players/' . $id, $params);
-    }
-
-    /**
-     * @return ClientInterface
-     */
-    private function client(): ClientInterface
-    {
-        return $this->client->setAuthKey($this->config['api_key']);
     }
 }
