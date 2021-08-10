@@ -18,7 +18,7 @@ ONESIGNAL_API_KEY=
 ONESIGNAL_AUTH_KEY=
 ```
 
-### Instantiating the object
+### Initialize the SDK
 
 When using this package in either of these frameworks, you have several options for instantiating the `OneSignal` class.
 
