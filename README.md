@@ -56,9 +56,9 @@ php artisan vendor:publish --provider="Kodjunkie\OnesignalPhpSdk\OneSignalServic
 Then set these values in your `.env` file
 
 ```dotenv
-ONESIGNAL_APP_ID=
 ONESIGNAL_API_KEY=
 ONESIGNAL_AUTH_KEY=
+ONESIGNAL_APP_ID=
 ```
 
 Lastly, use in your `controller` or wherever it's needed
