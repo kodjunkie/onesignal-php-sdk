@@ -2,8 +2,6 @@
 
 namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
-use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
-
 class Device extends Base
 {
     const IOS = 0;
