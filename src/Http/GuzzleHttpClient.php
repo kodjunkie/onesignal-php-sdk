@@ -5,7 +5,6 @@ namespace Kodjunkie\OnesignalPhpSdk\Http;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\ServerException;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 class GuzzleHttpClient implements ClientInterface
