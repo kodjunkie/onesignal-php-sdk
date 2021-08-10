@@ -2,6 +2,8 @@
 
 namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
+use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
+
 class Device extends Base
 {
     const IOS = 0;
@@ -21,15 +23,17 @@ class Device extends Base
 
     /**
      * Get all devices
-     * @param string $appId
+     * @param string|null $appId
      * @param int $limit
      * @param int $offset
      * @return string
+     * @throws InvalidArgumentException
+     * @url https://documentation.onesignal.com/reference/view-devices
      */
-    public function getAll(string $appId, int $limit = 300, int $offset = 0): string
+    public function getAll(string $appId = null, int $limit = 300, int $offset = 0): string
     {
         return $this->client()->get('players', [
-            'app_id' => $appId,
+            'app_id' => $this->getAppId($appId),
             'limit' => $limit,
             'offset' => $offset
         ]);
@@ -38,32 +42,70 @@ class Device extends Base
     /**
      * Get a device
      * @param string $playerId
-     * @param string $appId
+     * @param string|null $appId
+     * @param string|null $email_auth_hash
      * @return string
+     * @throws InvalidArgumentException
+     * @url https://documentation.onesignal.com/reference/view-device
      */
-    public function get(string $playerId, string $appId): string
+    public function get(string $playerId, string $appId = null, string $email_auth_hash = null): string
     {
-        return $this->client()->get('apps/' . $playerId, ['app_id' => $appId]);
+        $path = is_null($email_auth_hash) ? $playerId : $playerId . '/' . $email_auth_hash;
+        return $this->client()->get('players/' . $path, ['app_id' => $this->getAppId($appId)]);
     }
 
     /**
      * Create a new device
-     * @param array $params
+     * @param array $body
      * @return string
+     * @url https://documentation.onesignal.com/reference/add-a-device
+     * @throws InvalidArgumentException
      */
-    public function create(array $params = []): string
+    public function create(array $body): string
     {
-        return $this->client()->post('players', $params);
+        return $this->client()->post('players', array_merge([
+            'app_id' => $this->getAppId()
+        ], $body));
     }
 
     /**
      * Edit a device
-     * @param string $id
-     * @param array $params
+     * @param string $playerId
+     * @param array $body
      * @return string
+     * https://documentation.onesignal.com/reference/edit-device
+     * @throws InvalidArgumentException
      */
-    public function edit(string $id, array $params): string
+    public function update(string $playerId, array $body): string
     {
-        return $this->client()->put('players/' . $id, $params);
+        return $this->client()->put('players/' . $playerId, array_merge([
+            'app_id' => $this->getAppId()
+        ], $body));
+    }
+
+    /**
+     * Delete a device
+     * @param string $playerId
+     * @param string|null $appId
+     * @return string
+     * https://documentation.onesignal.com/reference/delete-user-record
+     * @throws InvalidArgumentException
+     */
+    public function delete(string $playerId, string $appId = null): string
+    {
+        return $this->client()->delete('players/' . $playerId, ['app_id' => $this->getAppId($appId)]);
+    }
+
+    /**
+     * Export device data in CSV
+     * @param string|null $appId
+     * @param array $body
+     * @return string
+     * https://documentation.onesignal.com/reference/csv-export
+     * @throws InvalidArgumentException
+     */
+    public function export(string $appId = null, array $body = []): string
+    {
+        return $this->client()->post('players/csv_export', $body, ['app_id' => $this->getAppId($appId)]);
     }
 }
