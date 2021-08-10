@@ -2,6 +2,7 @@
 
 namespace Kodjunkie\OnesignalPhpSdk;
 
+use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidConfigurationException;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidEndpointException;
 use Kodjunkie\OnesignalPhpSdk\Http\GuzzleHttpClient;
 
@@ -14,9 +15,13 @@ abstract class Service
 
     /**
      * @param array $config
+     * @throws InvalidConfigurationException
      */
     public function __construct(array $config = [])
     {
+        if (!isset($config['api_key']) || !isset($config['auth_key']))
+            throw new InvalidConfigurationException('Missing required credentials (api_key and/or auth_key).');
+
         $this->config = $config;
     }
 
