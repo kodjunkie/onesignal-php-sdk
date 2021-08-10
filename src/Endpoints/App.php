@@ -29,25 +29,25 @@ class App extends Base
 
     /**
      * Create a new app
-     * @param array $data
+     * @param array $body
      * @return string
      * @url https://documentation.onesignal.com/reference/create-an-app
      */
-    public function create(array $data = []): string
+    public function create(array $body): string
     {
-        return $this->client()->post('apps', $data);
+        return $this->client()->post('apps', $body);
     }
 
     /**
      * Update an app
      * @param string $appId
-     * @param array $data
+     * @param array $body
      * @return string
      * @url https://documentation.onesignal.com/reference/update-an-app
      */
-    public function update(string $appId, array $data = []): string
+    public function update(string $appId, array $body): string
     {
-        return $this->client()->put('apps/' . $appId, $data);
+        return $this->client()->put('apps/' . $appId, $body);
     }
 
     /**
@@ -61,6 +61,21 @@ class App extends Base
     {
         return $this->client->setAuthKey($this->config['api_key'])
             ->get("apps/${appId}/outcomes", $params);
+    }
+
+    /**
+     * Update an existing device's tags using the External User ID.
+     * @param string $appId
+     * @param string $external_user_id
+     * @param array $tags
+     * @return string
+     * @url https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
+     */
+    public function updateTags(string $appId, string $external_user_id, array $tags): string
+    {
+        return $this->client()->put('apps/' . $appId . '/users/' . $external_user_id, [
+            'tags' => $tags
+        ]);
     }
 
     /**
