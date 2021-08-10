@@ -24,16 +24,18 @@ interface ClientInterface
     /**
      * @param string $url
      * @param array $data
+     * @param array $params
      * @return string
      */
-    public function put(string $url, array $data = []): string;
+    public function put(string $url, array $data, array $params = []): string;
 
     /**
      * @param string $url
      * @param array $data
+     * @param array $params
      * @return string
      */
-    public function post(string $url, array $data = []): string;
+    public function post(string $url, array $data, array $params = []): string;
 
     /**
      * @param string $url

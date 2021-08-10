@@ -47,23 +47,31 @@ class GuzzleHttpClient implements ClientInterface
     /**
      * @param string $url
      * @param array $data
+     * @param array $params
      * @return string
      * @throws OneSignalException
      */
-    public function post(string $url, array $data = []): string
+    public function post(string $url, array $data, array $params = []): string
     {
-        return $this->request('POST', $url, ['json' => $data]);
+        return $this->request('POST', $url, [
+            'json' => $data,
+            'query' => $params
+        ]);
     }
 
     /**
      * @param string $url
      * @param array $data
+     * @param array $params
      * @return string
      * @throws OneSignalException
      */
-    public function put(string $url, array $data = []): string
+    public function put(string $url, array $data, array $params = []): string
     {
-        return $this->request('PUT', $url, ['json' => $data]);
+        return $this->request('PUT', $url, [
+            'json' => $data,
+            'query' => $params
+        ]);
     }
 
     /**
