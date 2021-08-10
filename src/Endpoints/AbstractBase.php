@@ -27,7 +27,7 @@ abstract class AbstractBase
         $this->config = [
             'api_key' => trim($config['api_key']),
             'auth_key' => trim($config['auth_key']),
-            'app_id' => trim($config['app_id']) ?? null,
+            'app_id' => isset($config['app_id']) ? trim($config['app_id']) : null,
         ];
     }
 
