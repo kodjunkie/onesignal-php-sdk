@@ -25,6 +25,12 @@ Using this package in a laravel / lumen project? [click for more examples](https
             * [->update(string $playerId, array $body)](#device+update) ⇒ <code>JSON</code>
             * [->delete(string $playerId, string $appId = null)](#device+delete) ⇒ <code>JSON</code>
             * [->export(string $appId = null, array $body = [])](#device+export) ⇒ <code>JSON</code>
+        * [->notification()](#notification+object) ⇒ <code>Notification::class</code>
+            * [->getAll(string $appId = null, int $limit = 50, int $offset = 0, int $kind = null)](#notification+getAll) ⇒ <code>JSON</code>
+            * [->get(string $notificationId, string $appId = null)](#notification+getAll) ⇒ <code>JSON</code>
+            * [->create(array $body)](#notification+create) ⇒ <code>JSON</code>
+            * [->cancel(string $notificationId, string $appId = null)](#notification+cancel) ⇒ <code>JSON</code>
+            * [->history(string $notificationId, string $email, string $events, string $appId = null)](#notification+history) ⇒ <code>JSON</code>
 
 ### Configuration
 
