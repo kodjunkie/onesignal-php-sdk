@@ -21,9 +21,14 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 try {
     $config = [
-        'app_id' => '', // Onesignal App ID
-        'api_key' => '', // Onesignal API key
-        'auth_key' => '' // Onesignal Auth key
+        // Onesignal API key
+        'api_key' => '',
+        // Onesignal Auth key
+        'auth_key' => '',
+        // Onesignal App ID (optional)
+        // Providing your app_id is only beneficial if you're working with a single OneSignal app
+        // and don't want to provide it all the time for endpoints that requires it
+        'app_id' => '',
     ];
     
     // Initialize the SDK

@@ -37,11 +37,17 @@ Using this package in a laravel / lumen project? [click for more examples](https
 
 ### Configuration
 
+**NOTE:** Providing your `app_id` is only beneficial if you're working with a single `OneSignal` app 
+and don't want to provide it all the time for endpoints that requires it.
+
 ```php
     $config = [
-        'app_id' => '', // Onesignal App ID
-        'api_key' => '', // Onesignal API key
-        'auth_key' => '' // Onesignal Auth key
+        // Onesignal API key
+        'api_key' => '',
+        // Onesignal Auth key
+        'auth_key' => '',
+        // Onesignal App ID (optional)
+        'app_id' => '',
     ];
 ```
 
