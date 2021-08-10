@@ -31,6 +31,9 @@ Using this package in a laravel / lumen project? [click for more examples](https
             * [->create(array $body)](#notification+create) ⇒ <code>JSON</code>
             * [->cancel(string $notificationId, string $appId = null)](#notification+cancel) ⇒ <code>JSON</code>
             * [->history(string $notificationId, string $email, string $events, string $appId = null)](#notification+history) ⇒ <code>JSON</code>
+        * [->segment()](#segment+object) ⇒ <code>Segment::class</code>
+            * [->create(array $body, string $appId = null)](#segment+create) ⇒ <code>JSON</code>
+            * [->delete(string $segmentId, string $appId = null)](#segment+delete) ⇒ <code>JSON</code>
 
 ### Configuration
 
