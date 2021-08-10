@@ -25,4 +25,12 @@ abstract class Base
         $this->client = $client;
         $this->config = $config;
     }
+
+    /**
+     * @return ClientInterface
+     */
+    protected function client(): ClientInterface
+    {
+        return $this->client->setAuthKey($this->config['api_key']);
+    }
 }

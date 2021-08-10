@@ -68,12 +68,4 @@ class Device extends Base
     {
         return $this->client()->put('players/' . $id, $params);
     }
-
-    /**
-     * @return ClientInterface
-     */
-    private function client(): ClientInterface
-    {
-        return $this->client->setAuthKey($this->config['api_key']);
-    }
 }
