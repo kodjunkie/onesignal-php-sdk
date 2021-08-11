@@ -86,7 +86,7 @@ class App extends AbstractBase
     /**
      * @return ClientInterface
      */
-    public function client(): ClientInterface
+    protected function client(): ClientInterface
     {
         return $this->client->setAuthKey($this->config['auth_key']);
     }
