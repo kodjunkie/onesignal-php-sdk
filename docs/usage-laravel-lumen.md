@@ -1,4 +1,4 @@
-## OneSignal PHP SDK
+## Usage in Laravel / Lumen
 
 **NOTE:** For `Laravel` users, this package registers itself automatically.
 
