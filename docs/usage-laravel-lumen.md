@@ -47,7 +47,8 @@ $oneSignal = app()->make('onesignal');
 
 #### Resolve via Dependency Injection
 
-You can type hint the `OneSignal` class in any method or function, and it'll be resolved automatically for you.
+You can type hint the `OneSignal` class in any method or function, and it'll be resolved automatically for you. 
+See the example below
 
 ```php
 <?php
@@ -63,23 +64,24 @@ class PodcastController extends Controller
     /**
      * @return \Illuminate\Http\JsonResponse
      */
-    public function subscribe(Request $request, OneSignal $oneSignal)
+    public function store(Request $request, OneSignal $oneSignal)
     {
         try {
             // Get the user
             $user = $request->user();
             
             // Perform your logic
+            $podcast = $user->podcast()->create($request->all());
             
             // Create a notification
-            $response = $oneSignal->notification()->create([
+            $oneSignal->notification()->create([
                         'include_player_ids' => [$user->player_id],
-                        'contents' => ['en' => 'Thank you for subscribing.'],
-                        'headings' => ['en' => 'Subscription success'],
-                        'data' => ['extra' => 'Some extra details']
+                        'contents' => ['en' => $request->content],
+                        'headings' => ['en' => 'Podcast created'],
+                        'data' => ['podcastId' => $podcast->id]
                     ]);
 
-            return response()->json($response);
+            return response()->json($podcast);
         } catch (OneSignalException $exception) {
             \Log::error($exception->getMessage());
         }

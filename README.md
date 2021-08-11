@@ -77,7 +77,8 @@ try {
     $response = $oneSignal->device()->getAll($appId, $limit, $offset);
     
     // Using Facade, the code above will look like this
-    $response = OneSignal::device()->getAll($appId, $limit, $offset);
+    // With app_id provided in the config
+    $response = OneSignal::device()->getAll(null, $limit, $offset);
     
     dd($response);
 } catch (OneSignalException $exception) {
