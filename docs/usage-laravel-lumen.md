@@ -14,7 +14,7 @@ ONESIGNAL_APP_ID=
 
 ### Register the service provider (lumen users only)
 
-Add this line to your `bootstrap/app.php`
+Add this line to your `bootstrap/app.php` file
 
 ```php
 $app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
