@@ -4,12 +4,6 @@
 
 ### Setup in Laravel / Lumen
 
-After requiring this package, in your terminal run
-
-```bash
-php artisan vendor:publish --provider="Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider"
-```
-
 Then set these values in your `.env` file
 
 ```dotenv
