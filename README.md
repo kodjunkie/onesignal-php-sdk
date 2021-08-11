@@ -44,7 +44,7 @@ try {
     // Get all apps
     $response = $oneSignal->app()->getAll();
     
-    // You can use json_decode() to get the response as an stdClass Object
+    // You can use json_decode to get the response as an stdClass Object
     var_dump($response);
 } catch (OneSignalException $exception) {
     var_dump($exception->getMessage());
