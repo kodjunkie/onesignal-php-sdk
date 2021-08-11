@@ -10,24 +10,15 @@ use Illuminate\Support\ServiceProvider;
 class OneSignalServiceProvider extends ServiceProvider
 {
     /**
-     * Register the service provider.
+     * Bootstrap any package services.
      *
      * @return void
      */
-    public function register()
-    {
-        $this->configure();
-        $this->registerBindings();
-    }
-
-    /**
-     * Set up the configuration.
-     */
-    protected function configure()
+    public function boot()
     {
         if ($this->app instanceof \Illuminate\Foundation\Application) {
             $this->publishes([
-                __DIR__ . '../../config/onesignal.php' => config_path('onesignal.php')
+                __DIR__ . '/../config/onesignal.php' => config_path('onesignal.php')
             ], 'config');
         } elseif ($this->app instanceof \Laravel\Lumen\Application) {
             $this->app->configure('onesignal');
@@ -35,10 +26,14 @@ class OneSignalServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register bindings in the container.
+     * Register the service provider.
+     *
+     * @return void
      */
-    protected function registerBindings()
+    public function register()
     {
+        $this->mergeConfigFrom(__DIR__ . '/../config/onesignal.php', 'onesignal');
+
         $this->app->singleton(OneSignal::class, function () {
             return new OneSignal(config('onesignal'));
         });
