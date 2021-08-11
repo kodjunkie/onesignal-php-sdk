@@ -1,6 +1,12 @@
-# OneSignal PHP SDK
+<h1 align="center">OneSignal PHP SDK</h1>
+
+<div align="center">
 
 OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen out of the box.
+
+[![Tests](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml) <a href="https://github.com/kodjunkie/raspar/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="License: MIT" height="20"></a>
+
+</div>
 
 - How to use this package? [Click here](https://github.com/kodjunkie/onesignal-php-sdk/tree/master/docs)
 - For Official documentation [click here](https://documentation.onesignal.com/reference)
