@@ -2,20 +2,22 @@
 
 **NOTE:** For `Laravel` users, this package registers itself automatically.
 
-### Setup in Laravel / Lumen
+### Configuration
 
-After requiring this package, in your terminal run
-
-```bash
-php artisan vendor:publish --provider="Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider"
-```
-
-Then set these values in your `.env` file
+Set these values in your `.env` file
 
 ```dotenv
 ONESIGNAL_API_KEY=
 ONESIGNAL_AUTH_KEY=
 ONESIGNAL_APP_ID=
+```
+
+### Register the service provider (lumen users only)
+
+Add this line to your `bootstrap/app.php` file
+
+```php
+$app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
 ```
 
 ### Initialize the SDK
@@ -47,8 +49,8 @@ $oneSignal = app()->make('onesignal');
 
 #### Resolve via Dependency Injection
 
-You can type hint the `OneSignal` class in any method or function, and it'll be resolved automatically for you. 
-See the example below
+You can type hint the `OneSignal` class in any method or function, and it'll be resolved automatically for you. See the
+example below
 
 ```php
 <?php
