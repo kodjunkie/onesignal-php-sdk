@@ -4,7 +4,7 @@
 
 OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen out of the box.
 
-[![Tests](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml) <a href="https://github.com/kodjunkie/raspar/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="License: MIT" height="20"></a>
+[![tests](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml) <a href="https://github.com/kodjunkie/raspar/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-MIT-red.svg" alt="License: MIT" height="20"></a>
 
 </div>
 
@@ -32,7 +32,7 @@ try {
         // Onesignal Auth key
         'auth_key' => '',
         // Onesignal App ID (optional)
-        // Providing your app_id is only beneficial if you're working with a single OneSignal app
+        // Providing your app_id is beneficial if you're working with a single OneSignal app
         // and don't want to provide it all the time for endpoints that requires it
         'app_id' => '',
     ];

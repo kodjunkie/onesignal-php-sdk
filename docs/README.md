@@ -37,7 +37,7 @@ Using this package in a laravel / lumen project? [click for more examples](https
 
 ### Configuration
 
-**NOTE:** Providing your `app_id` is only beneficial if you're working with a single `OneSignal` app 
+**NOTE:** Providing your `app_id` is beneficial if you're working with a single `OneSignal` app 
 and don't want to provide it all the time for endpoints that requires it.
 
 ```php
