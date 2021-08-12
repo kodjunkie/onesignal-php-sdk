@@ -115,7 +115,7 @@ class GuzzleHttpClient implements ClientInterface
             $response = $response->getBody()->getContents();
         } catch (ClientException $exception) {
             $response = $exception->getResponse()->getBody()->getContents();
-        }catch (GuzzleException $exception) {
+        } catch (GuzzleException $exception) {
             throw new OneSignalException($exception->getMessage(), $exception->getCode(), $exception);
         }
 

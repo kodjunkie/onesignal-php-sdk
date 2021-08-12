@@ -32,7 +32,7 @@ try {
         // Onesignal Auth key
         'auth_key' => '',
         // Onesignal App ID (optional)
-        // Providing your app_id is only beneficial if you're working with a single OneSignal app
+        // Providing your app_id is beneficial if you're working with a single OneSignal app
         // and don't want to provide it all the time for endpoints that requires it
         'app_id' => '',
     ];
