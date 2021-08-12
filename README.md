@@ -61,6 +61,14 @@ ONESIGNAL_AUTH_KEY=
 ONESIGNAL_APP_ID=
 ```
 
+### Register the service provider (lumen users only)
+
+Add this line to your `bootstrap/app.php` file
+
+```php
+$app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
+```
+
 Lastly, use in your `controller` or wherever it's needed
 
 ```php
