@@ -29,7 +29,7 @@ class OneSignalTest extends TestCase
     /**
      * @throws OneSignalException
      */
-    public function testBuildsAppEndpoint()
+    public function test_has_support_for_apps()
     {
         $expected = $this->oneSignal->app();
         $this->assertInstanceOf(App::class, $expected);
@@ -38,7 +38,7 @@ class OneSignalTest extends TestCase
     /**
      * @throws OneSignalException
      */
-    public function testBuildsDeviceEndpoint()
+    public function test_has_support_for_devices()
     {
         $expected = $this->oneSignal->device();
         $this->assertInstanceOf(Device::class, $expected);
@@ -47,7 +47,7 @@ class OneSignalTest extends TestCase
     /**
      * @throws OneSignalException
      */
-    public function testBuildsNotificationEndpoint()
+    public function test_has_support_for_notifications()
     {
         $expected = $this->oneSignal->notification();
         $this->assertInstanceOf(Notification::class, $expected);
@@ -56,7 +56,7 @@ class OneSignalTest extends TestCase
     /**
      * @throws OneSignalException
      */
-    public function testBuildsSegmentEndpoint()
+    public function test_has_support_for_segments()
     {
         $expected = $this->oneSignal->segment();
         $this->assertInstanceOf(Segment::class, $expected);
@@ -65,12 +65,27 @@ class OneSignalTest extends TestCase
     /**
      * @throws InvalidConfigurationException
      */
-    public function testThrowsExceptionOnInvalidConfiguration()
+    public function test_throws_exception_for_invalid_api_key()
     {
         $this->expectException(InvalidConfigurationException::class);
         new OneSignal(['api_key' => '']);
+    }
+
+    /**
+     * @throws InvalidConfigurationException
+     */
+    public function test_throws_exception_for_invalid_auth_key()
+    {
+        $this->expectException(InvalidConfigurationException::class);
         new OneSignal(['auth_key' => '']);
-        new OneSignal(['' => '']);
+    }
+
+    /**
+     */
+    public function test_throws_exception_for_invalid_configuration()
+    {
+        $this->expectException(InvalidConfigurationException::class);
+        new OneSignal();
     }
 
     /**
