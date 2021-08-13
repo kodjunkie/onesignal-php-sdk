@@ -94,8 +94,9 @@ class GuzzleHttpClient implements ClientInterface
             'base_uri' => 'https://onesignal.com/api/v1/',
             'timeout' => 30,
             'headers' => [
-                "Content-Type" => "application/json; charset=utf-8",
-                "Authorization" => "Basic " . $this->getAuthKey()
+                "Accept" => "application/json",
+                "Content-Type" => "application/json",
+                "Authorization" => "Basic " . $this->getAuthKey(),
             ]
         ]);
     }
