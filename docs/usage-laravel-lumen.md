@@ -26,7 +26,7 @@ When using this package in either of these frameworks, you have several options 
 
 #### Using the Facade
 
-With the help of facade, you can directly access each method statically from the `OneSignal` class
+With the help of facade, you can directly access each method statically
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
@@ -68,13 +68,12 @@ class PodcastController extends Controller
      */
     public function store(Request $request, OneSignal $oneSignal)
     {
+        // Get the user
+        $user = $request->user();
+        // Perform your logic
+        $podcast = $user->podcast()->create($request->all());
+        
         try {
-            // Get the user
-            $user = $request->user();
-            
-            // Perform your logic
-            $podcast = $user->podcast()->create($request->all());
-            
             // Create a notification
             $oneSignal->notification()->create([
                         'include_player_ids' => [$user->player_id],
@@ -82,11 +81,12 @@ class PodcastController extends Controller
                         'headings' => ['en' => 'Podcast created'],
                         'data' => ['podcastId' => $podcast->id]
                     ]);
-
-            return response()->json($podcast);
         } catch (OneSignalException $exception) {
+            // Get any unexpected error here
             \Log::error($exception->getMessage());
         }
+        
+        return response()->json($podcast);
     }
 }
 
