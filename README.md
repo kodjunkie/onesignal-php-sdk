@@ -25,8 +25,7 @@ composer require kodjunkie/onesignal-php-sdk
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
-try {
-    $config = [
+$config = [
         // Onesignal API key
         'api_key' => '',
         // Onesignal Auth key
@@ -36,7 +35,8 @@ try {
         // and don't want to provide it all the time for endpoints that requires it
         'app_id' => '',
     ];
-    
+
+try {
     // Initialize the SDK
     $oneSignal = new OneSignal($config);
     
