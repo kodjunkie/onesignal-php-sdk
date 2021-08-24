@@ -81,11 +81,12 @@ See: [https://documentation.onesignal.com/reference/view-apps-apps](https://docu
 See: [https://documentation.onesignal.com/reference/view-an-app](https://documentation.onesignal.com/reference/view-an-app)
 
 ```php
-    // Use with an empty argument
+    // Optionally: You can use with an empty argument
     // To get the details for the app you provided in the config
     $response = $oneSignal->app()->get();
 
     // To get the details for a different app
-    // Provide the app ID in the argument
+    // Or when no app_id is provided in the config
+    // Pass the app ID as an argument
     $response = $oneSignal->app()->get($appId);
 ```
