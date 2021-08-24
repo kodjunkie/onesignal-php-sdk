@@ -10,7 +10,7 @@ project? [click for more examples](https://github.com/kodjunkie/onesignal-php-sd
 * [$config](#configuration) ⇒ <code>array</code>
 * [new OneSignal($config)](#new_OneSignal_object)
     * _instance_
-        * [->app()](#app+object) ⇒ <code>App::class</code>
+        * [->app()](#app+getAll) ⇒ <code>App::class</code>
             * [->getAll()](#app+getAll) ⇒ <code>JSON</code>
             * [->get(string $appId = null)](#app+get) ⇒ <code>JSON</code>
             * [->create(array $body)](#app+create) ⇒ <code>JSON</code>
@@ -72,4 +72,21 @@ See: [https://documentation.onesignal.com/reference/view-apps-apps](https://docu
 
 ```php
     $response = $oneSignal->app()->getAll();
+```
+
+<a name="app+get"></a>
+
+### Get an app
+
+See: [https://documentation.onesignal.com/reference/view-an-app](https://documentation.onesignal.com/reference/view-an-app)
+
+```php
+    // Optionally: You can use with an empty argument
+    // To get the details for the app you provided in the config
+    $response = $oneSignal->app()->get();
+
+    // To get the details for a different app
+    // Or when no app_id is provided in the config
+    // Pass the app ID as an argument
+    $response = $oneSignal->app()->get($appId);
 ```
