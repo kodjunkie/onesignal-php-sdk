@@ -61,7 +61,7 @@ ONESIGNAL_AUTH_KEY=
 ONESIGNAL_APP_ID=
 ```
 
-### Register the service provider (lumen users only)
+#### Register the service provider (lumen users only)
 
 Add this line to your `bootstrap/app.php` file
 
