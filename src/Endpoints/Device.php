@@ -43,14 +43,14 @@ class Device extends AbstractBase
      * Get a device
      * @param string $playerId
      * @param string|null $appId
-     * @param string|null $email_auth_hash
+     * @param string|null $emailAuthHash
      * @return string
      * @throws InvalidArgumentException
      * @url https://documentation.onesignal.com/reference/view-device
      */
-    public function get(string $playerId, string $appId = null, string $email_auth_hash = null): string
+    public function get(string $playerId, string $appId = null, string $emailAuthHash = null): string
     {
-        $path = is_null($email_auth_hash) ? $playerId : $playerId . '/' . $email_auth_hash;
+        $path = is_null($emailAuthHash) ? $playerId : $playerId . '/' . $emailAuthHash;
         return $this->client()->get('players/' . $path, ['app_id' => $this->getAppId($appId)]);
     }
 

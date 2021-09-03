@@ -70,15 +70,15 @@ class App extends AbstractBase
     /**
      * Update an existing device's tags using the External User ID.
      * @param array $tags
-     * @param string $external_user_id
+     * @param string $externalUserId
      * @param string|null $appId
      * @return string
      * @url https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
      * @throws InvalidArgumentException
      */
-    public function updateTags(array $tags, string $external_user_id, string $appId = null): string
+    public function updateTags(array $tags, string $externalUserId, string $appId = null): string
     {
-        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . $external_user_id, [
+        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . $externalUserId, [
             'tags' => $tags
         ]);
     }
