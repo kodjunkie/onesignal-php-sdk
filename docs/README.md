@@ -140,3 +140,13 @@ See: [https://documentation.onesignal.com/reference/edit-tags-with-external-user
         'state' => "F.C.T"
     ], $externalUserId);
 ```
+
+<a name="device+getAll"></a>
+
+### View all devices
+
+See: [https://documentation.onesignal.com/reference/view-devices](https://documentation.onesignal.com/reference/view-devices)
+
+```php
+    $response = $oneSignal->device()->getAll(null, 50);
+```
