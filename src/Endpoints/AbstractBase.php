@@ -21,7 +21,7 @@ abstract class AbstractBase
      * @param ClientInterface $client
      * @param array $config
      */
-    public function __construct(ClientInterface $client, array $config = [])
+    final public function __construct(ClientInterface $client, array $config = [])
     {
         $this->client = $client;
         $this->config = [
@@ -44,10 +44,10 @@ abstract class AbstractBase
      * @return string
      * @throws InvalidArgumentException
      */
-    protected function getAppId(string $appId = null): string
+    final protected function getAppId(string $appId = null): string
     {
         if (is_null($appId) && is_null($this->config['app_id']))
-            throw new InvalidArgumentException('Missing required parameter (app_id).');
+            throw new InvalidArgumentException('Missing required parameter [app_id].');
 
         return is_null($appId) ? $this->config['app_id'] : $appId;
     }
