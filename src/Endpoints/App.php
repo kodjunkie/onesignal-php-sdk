@@ -63,8 +63,7 @@ class App extends AbstractBase
      */
     public function outcomes(string $appId = null, array $params = []): string
     {
-        return $this->client->setAuthKey($this->config['api_key'])
-            ->get('apps/' . $this->getAppId($appId) . '/outcomes', $params);
+        return parent::client()->get('apps/' . $this->getAppId($appId) . '/outcomes', $params);
     }
 
     /**

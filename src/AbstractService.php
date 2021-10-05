@@ -17,10 +17,10 @@ abstract class AbstractService
      * @param array $config
      * @throws InvalidConfigurationException
      */
-    public function __construct(array $config = [])
+    final public function __construct(array $config = [])
     {
         if (!isset($config['api_key']) || !isset($config['auth_key']))
-            throw new InvalidConfigurationException('Missing required credentials (api_key and/or auth_key).');
+            throw new InvalidConfigurationException('Missing required credentials [api_key and/or auth_key].');
 
         $this->config = $config;
     }
@@ -31,12 +31,12 @@ abstract class AbstractService
      * @return mixed
      * @throws InvalidEndpointException
      */
-    protected function build($endpoint)
+    final protected function build($endpoint)
     {
         $Endpoint = "\\Kodjunkie\\OnesignalPhpSdk\\Endpoints\\" . ucfirst($endpoint);
 
         if (!class_exists($Endpoint))
-            throw new InvalidEndpointException("Endpoint not found: " . $endpoint);
+            throw new InvalidEndpointException("Endpoint not found [$endpoint].");
 
         return new $Endpoint(new GuzzleHttpClient, $this->config);
     }
