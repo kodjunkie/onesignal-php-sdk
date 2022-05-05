@@ -13,11 +13,11 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 
 ## Installation
 
+**NOTE:** For `Laravel` users, this package registers itself automatically.
+
 ```bash
 composer require kodjunkie/onesignal-php-sdk
 ```
-
-**NOTE:** For `Laravel` users, this package registers itself automatically.
 
 ### Usage in plain PHP
 
@@ -31,8 +31,8 @@ $config = [
         // Onesignal Auth key
         'auth_key' => '',
         // Onesignal App ID (optional)
-        // Providing your app_id is beneficial if you're working with a single OneSignal app
-        // and don't want to provide it all the time for endpoints that requires it
+        // this is beneficial if you're working with a single OneSignal app
+        // so, you could pass "null" to methods that requires it.
         'app_id' => '',
     ];
 
@@ -44,7 +44,7 @@ try {
     // Get all apps
     $response = $oneSignal->app()->getAll();
     
-    // You can use json_decode to get the response as an stdClass Object
+    // Use json_decode() to get the response as an stdClass object
     var_dump($response);
 } catch (OneSignalException $exception) {
     var_dump($exception->getMessage());
@@ -61,7 +61,7 @@ ONESIGNAL_AUTH_KEY=
 ONESIGNAL_APP_ID=
 ```
 
-#### Register the service provider (lumen users only)
+#### Register the service provider (lumen only)
 
 Add this line to your `bootstrap/app.php` file
 

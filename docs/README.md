@@ -40,8 +40,8 @@ project? [click for more examples](https://github.com/kodjunkie/onesignal-php-sd
 
 ### Configuration
 
-**NOTE:** Providing your `app_id` is beneficial if you're working with a single `OneSignal` app and don't want to
-provide it all the time for endpoints that requires it; the examples below assumes you have it set.
+**NOTE:** Providing your `app_id` is beneficial if, you're working with a single `OneSignal` app and don't want to
+provide it as argument to methods that requires it; the examples below assume you have it set.
 
 ```php
     $config = [
