@@ -11,6 +11,10 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 - How to use this package? [Click here](https://github.com/kodjunkie/onesignal-php-sdk/tree/master/docs)
 - For Official documentation [click here](https://documentation.onesignal.com/reference)
 
+## Why use this package?
+
+> This is the only package out there that is unambiguous to set up, and has a fluent / straightforward API.
+
 ## Installation
 
 **NOTE:** For `Laravel` users, this package registers itself automatically.
@@ -63,7 +67,7 @@ ONESIGNAL_APP_ID=
 
 #### Register the service provider (lumen only)
 
-Add this line to your `bootstrap/app.php` file
+Add this line below to your `bootstrap/app.php` file
 
 ```php
 $app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
