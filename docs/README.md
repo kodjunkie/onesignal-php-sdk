@@ -93,7 +93,7 @@ See: [https://documentation.onesignal.com/reference/view-an-app](https://documen
 
 <a name="app+create"></a>
 
-### Create an app
+### Create a new app
 
 See: [https://documentation.onesignal.com/reference/create-an-app](https://documentation.onesignal.com/reference/create-an-app)
 
@@ -149,4 +149,75 @@ See: [https://documentation.onesignal.com/reference/view-devices](https://docume
 
 ```php
     $response = $oneSignal->device()->getAll(null, 50);
+```
+
+<a name="device+get"></a>
+
+### View a device
+
+See: [https://documentation.onesignal.com/reference/view-device](https://documentation.onesignal.com/reference/view-device)
+
+```php
+    $response = $oneSignal->device()->get($playerId);
+```
+
+<a name="device+create"></a>
+
+### Create a new device
+
+See: [https://documentation.onesignal.com/reference/add-a-device](https://documentation.onesignal.com/reference/add-a-device)
+
+```php
+    use \Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
+    
+    $response = $oneSignal->device()->create([
+        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+        'device_type' => Device::IOS,
+        'country' => 'US',
+        'tags' => [
+            'full_name' => 'John Doe'
+        ]
+    ]);
+```
+
+<a name="device+update"></a>
+
+### Update a device
+
+See: [https://documentation.onesignal.com/reference/edit-device](https://documentation.onesignal.com/reference/edit-device)
+
+```php
+    $response = $oneSignal->device()->update($playerId, [
+        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+        'country' => 'NG',
+        'tags' => [
+            'full_name' => 'Jane Doe'
+        ]
+    ]);
+```
+
+<a name="device+delete"></a>
+
+### Delete a device
+
+See: [https://documentation.onesignal.com/reference/delete-user-record](https://documentation.onesignal.com/reference/delete-user-record)
+
+```php
+    $response = $oneSignal->device()->delete($playerId);
+```
+
+<a name="device+export"></a>
+
+### Export all of your current device data in CSV
+
+See: [https://documentation.onesignal.com/reference/csv-export](https://documentation.onesignal.com/reference/csv-export)
+
+```php
+    $response = $oneSignal->device()->export(null, [
+        'extra_fields' => [
+            "country", "notification_types", "external_user_id", "location", "ip", "country"
+        ],
+        'last_active_since' => '1469392779',
+        'segment_name' => 'Subscribed Users'
+    ]);
 ```
