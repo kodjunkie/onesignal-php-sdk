@@ -9,7 +9,7 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 </div>
 
 - How to use this package? [Click here](https://github.com/kodjunkie/onesignal-php-sdk/tree/master/docs)
-- For Official documentation [click here](https://documentation.onesignal.com/reference)
+- For official documentation [click here](https://documentation.onesignal.com/reference)
 
 ## Why use this package?
 
