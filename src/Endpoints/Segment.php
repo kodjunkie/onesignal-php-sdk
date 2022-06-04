@@ -7,12 +7,12 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 class Segment extends AbstractBase
 {
     /**
-     * Create a segment
+     * Create a new segment
      * @param array $body
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/create-segments
+     * @see https://documentation.onesignal.com/reference/create-segments
      */
     public function create(array $body, string $appId = null): string
     {
@@ -25,7 +25,7 @@ class Segment extends AbstractBase
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/delete-segments
+     * @see https://documentation.onesignal.com/reference/delete-segments
      */
     public function delete(string $segmentId, string $appId = null): string
     {

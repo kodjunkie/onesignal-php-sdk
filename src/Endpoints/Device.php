@@ -28,7 +28,7 @@ class Device extends AbstractBase
      * @param int $offset
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/view-devices
+     * @see https://documentation.onesignal.com/reference/view-devices
      */
     public function getAll(string $appId = null, int $limit = 300, int $offset = 0): string
     {
@@ -46,7 +46,7 @@ class Device extends AbstractBase
      * @param string|null $emailAuthHash
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/view-device
+     * @see https://documentation.onesignal.com/reference/view-device
      */
     public function get(string $playerId, string $appId = null, string $emailAuthHash = null): string
     {
@@ -58,7 +58,7 @@ class Device extends AbstractBase
      * Create a new device
      * @param array $body
      * @return string
-     * @url https://documentation.onesignal.com/reference/add-a-device
+     * @see https://documentation.onesignal.com/reference/add-a-device
      * @throws InvalidArgumentException
      */
     public function create(array $body): string
