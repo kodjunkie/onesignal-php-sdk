@@ -85,7 +85,7 @@ Run the command below in your root directory to publish the configuration file
 mkdir -p ./config && cp ./vendor/kodjunkie/onesignal-php-sdk/config/onesignal.php ./config
 ```
 
-Lastly, use in your `controller` or wherever it's needed
+#### Examples
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
