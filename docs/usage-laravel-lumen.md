@@ -41,10 +41,7 @@ When using this package in either of these frameworks, you have several options 
 With the help of facade, you can directly access each method statically
 
 ```php
-use Kodjunkie\OnesignalPhpSdk\OneSignal;
-
 $response = OneSignal::app()->getAll();
-
 ```
 
 #### Resolve via the IoC container
