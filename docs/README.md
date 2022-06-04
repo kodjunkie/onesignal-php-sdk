@@ -32,7 +32,7 @@ project? [click for more examples](https://github.com/kodjunkie/onesignal-php-sd
             * [->get(string $notificationId, string $appId = null)](#notification+getAll) ⇒ <code>JSON</code>
             * [->create(array $body)](#notification+create) ⇒ <code>JSON</code>
             * [->cancel(string $notificationId, string $appId = null)](#notification+cancel) ⇒ <code>JSON</code>
-            * [->history(string $notificationId, string $email, string $events, string $appId = null)](#notification+history)
+            * [->history(string $notificationId, string $email, string $event, string $appId = null)](#notification+history)
               ⇒ <code>JSON</code>
         * [->segment()](#segment+object) ⇒ <code>Segment::class</code>
             * [->create(array $body, string $appId = null)](#segment+create) ⇒ <code>JSON</code>
@@ -238,4 +238,79 @@ See: [https://documentation.onesignal.com/reference/view-notifications](https://
     use \Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
     
     $response = $oneSignal->notification()->getAll(null, 50, Notification::API_ONLY);
+```
+
+<a name="notification+get"></a>
+
+### View a notification
+
+See: [https://documentation.onesignal.com/reference/view-notification](https://documentation.onesignal.com/reference/view-notification)
+
+```php
+    $response = $oneSignal->notification()->get($notificationId);
+```
+
+<a name="notification+create"></a>
+
+### Create a new notification
+
+See: [https://documentation.onesignal.com/reference/create-notification](https://documentation.onesignal.com/reference/create-notification)
+
+```php
+    $response = $oneSignal->notification()->create([
+        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+        'include_player_ids' => [$playerId],
+        'contents' => ['en' => 'Thank you for subscribing.'],
+        'headings' => ['en' => 'Subscription success'],
+        'data' => ['extra' => 'Some extra details']
+    ]);
+```
+
+<a name="notification+cancel"></a>
+
+### Cancel a notification
+
+See: [https://documentation.onesignal.com/reference/cancel-notification](https://documentation.onesignal.com/reference/cancel-notification)
+
+```php
+    $response = $oneSignal->notification()->cancel($notificationId);
+```
+
+<a name="notification+history"></a>
+
+### View notification history
+
+See: [https://documentation.onesignal.com/reference/notification-history](https://documentation.onesignal.com/reference/notification-history)
+
+```php
+    $response = $oneSignal->notification()->history($notificationId, $email, 'clicked');
+```
+
+<a name="segment+create"></a>
+
+### Create a new segment
+
+See: [https://documentation.onesignal.com/reference/create-segments](https://documentation.onesignal.com/reference/create-segments)
+
+```php
+    $response = $oneSignal->segment()->create([
+        "name" => "Demo Segment",
+        "filters" => [
+            ["field" => "session_count", "relation" => ">", "value" => "1"],
+            ["operator" => "AND"],
+            ["field" => "tag", "relation" => "!=", "key" => "tag_key", "value" => "1"],
+            ["operator" => "OR"],
+            ["field" => "last_session", "relation" => "<", "hours_ago" => "30"]
+        ]
+    ]);
+```
+
+<a name="segment+delete"></a>
+
+### Delete a segment
+
+See: [https://documentation.onesignal.com/reference/delete-segments](https://documentation.onesignal.com/reference/delete-segments)
+
+```php
+    $response = $oneSignal->segment()->delete($segmentId);
 ```
