@@ -18,6 +18,18 @@ Add this line to your `bootstrap/app.php` file
 
 ```php
 $app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
+
+// Register the facade (optional)
+// To use, must have $app->withFacades() enabled
+if (!class_exists('OneSignal')) {
+    class_alias(\Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
+}
+```
+
+Run the command below in your root directory to publish the configuration file
+
+```bash
+mkdir -p ./config && cp ./vendor/kodjunkie/onesignal-php-sdk/config/onesignal.php ./config
 ```
 
 ### Initialize the SDK
@@ -29,10 +41,7 @@ When using this package in either of these frameworks, you have several options 
 With the help of facade, you can directly access each method statically
 
 ```php
-use Kodjunkie\OnesignalPhpSdk\OneSignal;
-
 $response = OneSignal::app()->getAll();
-
 ```
 
 #### Resolve via the IoC container

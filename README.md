@@ -71,9 +71,21 @@ Add this line below to your `bootstrap/app.php` file
 
 ```php
 $app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
+
+// Register the facade (optional)
+// To use, must have $app->withFacades() enabled
+if (!class_exists('OneSignal')) {
+    class_alias(\Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
+}
 ```
 
-Lastly, use in your `controller` or wherever it's needed
+Run the command below in your root directory to publish the configuration file
+
+```bash
+mkdir -p ./config && cp ./vendor/kodjunkie/onesignal-php-sdk/config/onesignal.php ./config
+```
+
+#### Examples
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
