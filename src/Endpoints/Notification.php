@@ -18,7 +18,7 @@ class Notification extends AbstractBase
      * @param int|null $kind
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/view-notifications
+     * @see https://documentation.onesignal.com/reference/view-notifications
      */
     public function getAll(string $appId = null, int $limit = 50, int $offset = 0, int $kind = null): string
     {
@@ -36,7 +36,7 @@ class Notification extends AbstractBase
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/view-notification
+     * @see https://documentation.onesignal.com/reference/view-notification
      */
     public function get(string $notificationId, string $appId = null): string
     {
@@ -44,11 +44,11 @@ class Notification extends AbstractBase
     }
 
     /**
-     * Create a notification
+     * Create a new notification
      * @param array $body
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/create-notification
+     * @see https://documentation.onesignal.com/reference/create-notification
      */
     public function create(array $body): string
     {
@@ -63,7 +63,7 @@ class Notification extends AbstractBase
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/cancel-notification
+     * @see https://documentation.onesignal.com/reference/cancel-notification
      */
     public function cancel(string $notificationId, string $appId = null): string
     {
@@ -74,18 +74,18 @@ class Notification extends AbstractBase
      * View notification history
      * @param string $notificationId
      * @param string $email
-     * @param string $events
+     * @param string $event
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/notification-history
+     * @see https://documentation.onesignal.com/reference/notification-history
      */
-    public function history(string $notificationId, string $email, string $events, string $appId = null): string
+    public function history(string $notificationId, string $email, string $event, string $appId = null): string
     {
         return $this->client()->post('notifications/' . $notificationId . '/history', [
             'app_id' => $this->getAppId($appId),
             'email' => $email,
-            'events' => $events
+            'events' => $event
         ]);
     }
 }

@@ -10,7 +10,7 @@ class App extends AbstractBase
     /**
      * View all apps
      * @return string
-     * @url https://documentation.onesignal.com/reference/view-apps-apps
+     * @see https://documentation.onesignal.com/reference/view-apps-apps
      */
     public function getAll(): string
     {
@@ -21,7 +21,7 @@ class App extends AbstractBase
      * View an app
      * @param string|null $appId
      * @return string
-     * @url https://documentation.onesignal.com/reference/view-an-app
+     * @see https://documentation.onesignal.com/reference/view-an-app
      * @throws InvalidArgumentException
      */
     public function get(string $appId = null): string
@@ -33,7 +33,7 @@ class App extends AbstractBase
      * Create a new app
      * @param array $body
      * @return string
-     * @url https://documentation.onesignal.com/reference/create-an-app
+     * @see https://documentation.onesignal.com/reference/create-an-app
      */
     public function create(array $body): string
     {
@@ -46,7 +46,7 @@ class App extends AbstractBase
      * @param string|null $appId
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/update-an-app
+     * @see https://documentation.onesignal.com/reference/update-an-app
      */
     public function update(array $body, string $appId = null): string
     {
@@ -59,7 +59,7 @@ class App extends AbstractBase
      * @param array $params
      * @return string
      * @throws InvalidArgumentException
-     * @url https://documentation.onesignal.com/reference/view-outcomes
+     * @see https://documentation.onesignal.com/reference/view-outcomes
      */
     public function outcomes(string $appId = null, array $params = []): string
     {
@@ -72,7 +72,7 @@ class App extends AbstractBase
      * @param string $externalUserId
      * @param string|null $appId
      * @return string
-     * @url https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
+     * @see https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
      * @throws InvalidArgumentException
      */
     public function updateTags(array $tags, string $externalUserId, string $appId = null): string
