@@ -198,7 +198,7 @@ See: [https://documentation.onesignal.com/reference/edit-device](https://documen
 
 <a name="device+delete"></a>
 
-### Delete a device
+### Delete a device / user
 
 See: [https://documentation.onesignal.com/reference/delete-user-record](https://documentation.onesignal.com/reference/delete-user-record)
 
@@ -220,4 +220,22 @@ See: [https://documentation.onesignal.com/reference/csv-export](https://document
         'last_active_since' => '1469392779',
         'segment_name' => 'Subscribed Users'
     ]);
+```
+
+<a name="notification+getAll"></a>
+
+### View all notifications
+
+See: [https://documentation.onesignal.com/reference/view-notifications](https://documentation.onesignal.com/reference/view-notifications)
+
+```php
+    $response = $oneSignal->notification()->getAll(null, 50);
+```
+
+> To view API only notifications
+
+```php
+    use \Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
+    
+    $response = $oneSignal->notification()->getAll(null, 50, Notification::API_ONLY);
 ```
