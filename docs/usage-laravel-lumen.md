@@ -26,12 +26,6 @@ if (!class_exists('OneSignal')) {
 }
 ```
 
-Run the command below in your root directory to publish the configuration file
-
-```bash
-mkdir -p ./config && cp ./vendor/kodjunkie/onesignal-php-sdk/config/onesignal.php ./config
-```
-
 ### Initialize the SDK
 
 When using this package in either of these frameworks, you have several options for instantiating the `OneSignal` class.

@@ -19,7 +19,10 @@ abstract class AbstractService
      */
     final public function __construct(array $config = [])
     {
-        if (!isset($config['api_key']) || !isset($config['auth_key']))
+        $apiKey = array_key_exists('api_key', $config) ? $config['api_key'] : null;
+        $authKey = array_key_exists('auth_key', $config) ? $config['auth_key'] : null;
+
+        if (!$apiKey || !$authKey)
             throw new InvalidConfigurationException('Missing required credentials [api_key and/or auth_key].');
 
         $this->config = $config;

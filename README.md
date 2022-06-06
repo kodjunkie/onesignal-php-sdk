@@ -79,13 +79,7 @@ if (!class_exists('OneSignal')) {
 }
 ```
 
-Run the command below in your root directory to publish the configuration file
-
-```bash
-mkdir -p ./config && cp ./vendor/kodjunkie/onesignal-php-sdk/config/onesignal.php ./config
-```
-
-#### Examples
+#### Code samples
 
 ```php
 use Kodjunkie\OnesignalPhpSdk\OneSignal;
