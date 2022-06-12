@@ -148,7 +148,7 @@ See: [https://documentation.onesignal.com/reference/edit-tags-with-external-user
 See: [https://documentation.onesignal.com/reference/view-devices](https://documentation.onesignal.com/reference/view-devices)
 
 ```php
-    $response = $oneSignal->device()->getAll(null, 50);
+    $response = $oneSignal->device()->getAll(null, $limit);
 ```
 
 <a name="device+get"></a>
@@ -229,7 +229,7 @@ See: [https://documentation.onesignal.com/reference/csv-export](https://document
 See: [https://documentation.onesignal.com/reference/view-notifications](https://documentation.onesignal.com/reference/view-notifications)
 
 ```php
-    $response = $oneSignal->notification()->getAll(null, 50);
+    $response = $oneSignal->notification()->getAll(null, $limit);
 ```
 
 > To view API only notifications
@@ -237,7 +237,7 @@ See: [https://documentation.onesignal.com/reference/view-notifications](https://
 ```php
     use \Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
     
-    $response = $oneSignal->notification()->getAll(null, 50, Notification::API_ONLY);
+    $response = $oneSignal->notification()->getAll(null, $limit, $offset, Notification::API_ONLY);
 ```
 
 <a name="notification+get"></a>
