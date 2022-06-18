@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="./onesignal.png" alt="OneSignal" height="100" width="auto" />
+</div>
+
 <h1 align="center">OneSignal PHP SDK</h1>
 
 <div align="center">
