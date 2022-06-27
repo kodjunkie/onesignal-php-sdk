@@ -27,6 +27,25 @@
     "scripts": {
         "test": "vendor/bin/phpunit"
     },
+    "keywords": [
+        "php",
+        "api",
+        "laravel",
+        "lumen",
+        "onesignal",
+        "fcm",
+        "apns",
+        "gcm",
+        "sdk",
+        "one",
+        "notification",
+        "signal",
+        "push",
+        "notify",
+        "webpush",
+        "fluent",
+        "developer"
+    ],
     "extra": {
         "laravel": {
             "providers": [
