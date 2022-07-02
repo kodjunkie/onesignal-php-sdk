@@ -34,15 +34,15 @@ use Kodjunkie\OnesignalPhpSdk\OneSignal;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 $config = [
-        // Onesignal API key
-        'api_key' => '',
-        // Onesignal Auth key
-        'auth_key' => '',
-        // Onesignal App ID (optional)
-        // this is beneficial if you're working with a single OneSignal app
-        // so, you could pass "null" to methods that requires it.
-        'app_id' => '',
-    ];
+    // Onesignal API key
+    'api_key' => '',
+    // Onesignal Auth key
+    'auth_key' => '',
+    // Onesignal App ID (optional)
+    // this is beneficial if you're working with a single OneSignal app
+    // so, you could pass "null" to methods that requires it.
+    'app_id' => '',
+];
 
 try {
     // Initialize the SDK
@@ -71,15 +71,15 @@ ONESIGNAL_APP_ID=
 
 #### Register the service provider (lumen only)
 
-Add this line below to your `bootstrap/app.php` file
+Add this line to your `bootstrap/app.php` file
 
 ```php
-$app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
+$app->register(Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
 
 // Register the facade (optional)
 // To use, must have $app->withFacades() enabled
 if (!class_exists('OneSignal')) {
-    class_alias(\Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
+    class_alias(Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
 }
 ```
 
