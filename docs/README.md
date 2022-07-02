@@ -1,7 +1,7 @@
 # API Reference
 
 Using this package in a laravel / lumen
-project? [click for more examples](https://github.com/kodjunkie/onesignal-php-sdk/blob/master/docs/usage-laravel-lumen.md)
+project? [Click for more examples](https://github.com/kodjunkie/onesignal-php-sdk/blob/master/docs/usage-laravel-lumen.md)
 
 ## OneSignal PHP SDK
 
@@ -44,14 +44,14 @@ project? [click for more examples](https://github.com/kodjunkie/onesignal-php-sd
 provide it as argument to methods that requires it; the examples below assume you have it set.
 
 ```php
-    $config = [
-        // Onesignal API key
-        'api_key' => '',
-        // Onesignal Auth key
-        'auth_key' => '',
-        // Onesignal App ID (optional)
-        'app_id' => '',
-    ];
+$config = [
+    // Onesignal API key
+    'api_key' => '',
+    // Onesignal Auth key
+    'auth_key' => '',
+    // Onesignal App ID (optional)
+    'app_id' => '',
+];
 ```
 
 <a name="new_OneSignal_object"></a>
@@ -59,9 +59,9 @@ provide it as argument to methods that requires it; the examples below assume yo
 ### Initialize the SDK
 
 ```php
-    use Kodjunkie\OnesignalPhpSdk\OneSignal;
+use Kodjunkie\OnesignalPhpSdk\OneSignal;
 
-    $oneSignal = new OneSignal($config);
+$oneSignal = new OneSignal($config);
 ```
 
 <a name="app+getAll"></a>
@@ -71,7 +71,7 @@ provide it as argument to methods that requires it; the examples below assume yo
 See: [https://documentation.onesignal.com/reference/view-apps-apps](https://documentation.onesignal.com/reference/view-apps-apps)
 
 ```php
-    $response = $oneSignal->app()->getAll();
+$response = $oneSignal->app()->getAll();
 ```
 
 <a name="app+get"></a>
@@ -81,14 +81,14 @@ See: [https://documentation.onesignal.com/reference/view-apps-apps](https://docu
 See: [https://documentation.onesignal.com/reference/view-an-app](https://documentation.onesignal.com/reference/view-an-app)
 
 ```php
-    // Optionally: You can use with an empty argument
-    // To get the details for the app you provided in the config
-    $response = $oneSignal->app()->get();
+// Optionally: You can use with an empty argument
+// To get the details for the app you provided in the config
+$response = $oneSignal->app()->get();
 
-    // To get the details for a different app
-    // Or when no app_id is provided in the config
-    // Pass the app ID as an argument
-    $response = $oneSignal->app()->get($appId);
+// To get the details for a different app
+// Or when no app_id is provided in the config
+// Pass the app ID as an argument
+$response = $oneSignal->app()->get($appId);
 ```
 
 <a name="app+create"></a>
@@ -98,9 +98,9 @@ See: [https://documentation.onesignal.com/reference/view-an-app](https://documen
 See: [https://documentation.onesignal.com/reference/create-an-app](https://documentation.onesignal.com/reference/create-an-app)
 
 ```php
-    $response = $oneSignal->app()->create([
-        'name' => 'Demo App'
-    ]);
+$response = $oneSignal->app()->create([
+    'name' => 'Demo App'
+]);
 ```
 
 <a name="app+update"></a>
@@ -110,10 +110,10 @@ See: [https://documentation.onesignal.com/reference/create-an-app](https://docum
 See: [https://documentation.onesignal.com/reference/update-an-app](https://documentation.onesignal.com/reference/update-an-app)
 
 ```php
-    $response = $oneSignal->app()->update([
-        'name' => 'Updated Demo App',
-        'apns_env' => 'production'
-    ]);
+$response = $oneSignal->app()->update([
+    'name' => 'Updated Demo App',
+    'apns_env' => 'production'
+]);
 ```
 
 <a name="app+outcomes"></a>
@@ -123,9 +123,9 @@ See: [https://documentation.onesignal.com/reference/update-an-app](https://docum
 See: [https://documentation.onesignal.com/reference/view-outcomes](https://documentation.onesignal.com/reference/view-outcomes)
 
 ```php
-    $response = $oneSignal->app()->outcomes(null, [
-        'outcome_names' => ['os__session_duration.count', 'os__click.count']
-    ]);
+$response = $oneSignal->app()->outcomes(null, [
+    'outcome_names' => ['os__session_duration.count', 'os__click.count']
+]);
 ```
 
 <a name="app+updateTags"></a>
@@ -135,10 +135,10 @@ See: [https://documentation.onesignal.com/reference/view-outcomes](https://docum
 See: [https://documentation.onesignal.com/reference/edit-tags-with-external-user-id](https://documentation.onesignal.com/reference/edit-tags-with-external-user-id)
 
 ```php
-    $response = $oneSignal->app()->updateTags([
-        'country_code' => "NG",
-        'state' => "F.C.T"
-    ], $externalUserId);
+$response = $oneSignal->app()->updateTags([
+    'country_code' => "NG",
+    'state' => "F.C.T"
+], $externalUserId);
 ```
 
 <a name="device+getAll"></a>
@@ -148,7 +148,7 @@ See: [https://documentation.onesignal.com/reference/edit-tags-with-external-user
 See: [https://documentation.onesignal.com/reference/view-devices](https://documentation.onesignal.com/reference/view-devices)
 
 ```php
-    $response = $oneSignal->device()->getAll(null, $limit);
+$response = $oneSignal->device()->getAll(null, $limit);
 ```
 
 <a name="device+get"></a>
@@ -158,7 +158,7 @@ See: [https://documentation.onesignal.com/reference/view-devices](https://docume
 See: [https://documentation.onesignal.com/reference/view-device](https://documentation.onesignal.com/reference/view-device)
 
 ```php
-    $response = $oneSignal->device()->get($playerId);
+$response = $oneSignal->device()->get($playerId);
 ```
 
 <a name="device+create"></a>
@@ -168,16 +168,16 @@ See: [https://documentation.onesignal.com/reference/view-device](https://documen
 See: [https://documentation.onesignal.com/reference/add-a-device](https://documentation.onesignal.com/reference/add-a-device)
 
 ```php
-    use \Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
-    
-    $response = $oneSignal->device()->create([
-        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
-        'device_type' => Device::IOS,
-        'country' => 'US',
-        'tags' => [
-            'full_name' => 'John Doe'
-        ]
-    ]);
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
+
+$response = $oneSignal->device()->create([
+    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'device_type' => Device::IOS,
+    'country' => 'US',
+    'tags' => [
+        'full_name' => 'John Doe'
+    ]
+]);
 ```
 
 <a name="device+update"></a>
@@ -187,13 +187,13 @@ See: [https://documentation.onesignal.com/reference/add-a-device](https://docume
 See: [https://documentation.onesignal.com/reference/edit-device](https://documentation.onesignal.com/reference/edit-device)
 
 ```php
-    $response = $oneSignal->device()->update($playerId, [
-        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
-        'country' => 'NG',
-        'tags' => [
-            'full_name' => 'Jane Doe'
-        ]
-    ]);
+$response = $oneSignal->device()->update($playerId, [
+    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'country' => 'NG',
+    'tags' => [
+        'full_name' => 'Jane Doe'
+    ]
+]);
 ```
 
 <a name="device+delete"></a>
@@ -203,7 +203,7 @@ See: [https://documentation.onesignal.com/reference/edit-device](https://documen
 See: [https://documentation.onesignal.com/reference/delete-user-record](https://documentation.onesignal.com/reference/delete-user-record)
 
 ```php
-    $response = $oneSignal->device()->delete($playerId);
+$response = $oneSignal->device()->delete($playerId);
 ```
 
 <a name="device+export"></a>
@@ -213,13 +213,13 @@ See: [https://documentation.onesignal.com/reference/delete-user-record](https://
 See: [https://documentation.onesignal.com/reference/csv-export](https://documentation.onesignal.com/reference/csv-export)
 
 ```php
-    $response = $oneSignal->device()->export(null, [
-        'extra_fields' => [
-            "country", "notification_types", "external_user_id", "location", "ip", "country"
-        ],
-        'last_active_since' => '1469392779',
-        'segment_name' => 'Subscribed Users'
-    ]);
+$response = $oneSignal->device()->export(null, [
+    'extra_fields' => [
+        "country", "notification_types", "external_user_id", "location", "ip", "country"
+    ],
+    'last_active_since' => '1469392779',
+    'segment_name' => 'Subscribed Users'
+]);
 ```
 
 <a name="notification+getAll"></a>
@@ -229,15 +229,15 @@ See: [https://documentation.onesignal.com/reference/csv-export](https://document
 See: [https://documentation.onesignal.com/reference/view-notifications](https://documentation.onesignal.com/reference/view-notifications)
 
 ```php
-    $response = $oneSignal->notification()->getAll(null, $limit);
+$response = $oneSignal->notification()->getAll(null, $limit);
 ```
 
 > To view API only notifications
 
 ```php
-    use \Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
-    
-    $response = $oneSignal->notification()->getAll(null, $limit, $offset, Notification::API_ONLY);
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
+
+$response = $oneSignal->notification()->getAll(null, $limit, $offset, Notification::API_ONLY);
 ```
 
 <a name="notification+get"></a>
@@ -247,7 +247,7 @@ See: [https://documentation.onesignal.com/reference/view-notifications](https://
 See: [https://documentation.onesignal.com/reference/view-notification](https://documentation.onesignal.com/reference/view-notification)
 
 ```php
-    $response = $oneSignal->notification()->get($notificationId);
+$response = $oneSignal->notification()->get($notificationId);
 ```
 
 <a name="notification+create"></a>
@@ -257,13 +257,13 @@ See: [https://documentation.onesignal.com/reference/view-notification](https://d
 See: [https://documentation.onesignal.com/reference/create-notification](https://documentation.onesignal.com/reference/create-notification)
 
 ```php
-    $response = $oneSignal->notification()->create([
-        'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
-        'include_player_ids' => [$playerId],
-        'contents' => ['en' => 'Thank you for subscribing.'],
-        'headings' => ['en' => 'Subscription success'],
-        'data' => ['extra' => 'Some extra details']
-    ]);
+$response = $oneSignal->notification()->create([
+    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'include_player_ids' => [$playerId],
+    'contents' => ['en' => 'Thank you for subscribing.'],
+    'headings' => ['en' => 'Subscription success'],
+    'data' => ['extra' => 'Some extra details']
+]);
 ```
 
 <a name="notification+cancel"></a>
@@ -273,7 +273,7 @@ See: [https://documentation.onesignal.com/reference/create-notification](https:/
 See: [https://documentation.onesignal.com/reference/cancel-notification](https://documentation.onesignal.com/reference/cancel-notification)
 
 ```php
-    $response = $oneSignal->notification()->cancel($notificationId);
+$response = $oneSignal->notification()->cancel($notificationId);
 ```
 
 <a name="notification+history"></a>
@@ -283,7 +283,9 @@ See: [https://documentation.onesignal.com/reference/cancel-notification](https:/
 See: [https://documentation.onesignal.com/reference/notification-history](https://documentation.onesignal.com/reference/notification-history)
 
 ```php
-    $response = $oneSignal->notification()->history($notificationId, $email, 'clicked');
+use Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
+
+$response = $oneSignal->notification()->history($notificationId, $email, Notification::CLICKED);
 ```
 
 <a name="segment+create"></a>
@@ -293,16 +295,16 @@ See: [https://documentation.onesignal.com/reference/notification-history](https:
 See: [https://documentation.onesignal.com/reference/create-segments](https://documentation.onesignal.com/reference/create-segments)
 
 ```php
-    $response = $oneSignal->segment()->create([
-        "name" => "Demo Segment",
-        "filters" => [
-            ["field" => "session_count", "relation" => ">", "value" => "1"],
-            ["operator" => "AND"],
-            ["field" => "tag", "relation" => "!=", "key" => "tag_key", "value" => "1"],
-            ["operator" => "OR"],
-            ["field" => "last_session", "relation" => "<", "hours_ago" => "30"]
-        ]
-    ]);
+$response = $oneSignal->segment()->create([
+    "name" => "Demo Segment",
+    "filters" => [
+        ["field" => "session_count", "relation" => ">", "value" => "1"],
+        ["operator" => "AND"],
+        ["field" => "tag", "relation" => "!=", "key" => "tag_key", "value" => "1"],
+        ["operator" => "OR"],
+        ["field" => "last_session", "relation" => "<", "hours_ago" => "30"]
+    ]
+]);
 ```
 
 <a name="segment+delete"></a>
@@ -312,5 +314,5 @@ See: [https://documentation.onesignal.com/reference/create-segments](https://doc
 See: [https://documentation.onesignal.com/reference/delete-segments](https://documentation.onesignal.com/reference/delete-segments)
 
 ```php
-    $response = $oneSignal->segment()->delete($segmentId);
+$response = $oneSignal->segment()->delete($segmentId);
 ```

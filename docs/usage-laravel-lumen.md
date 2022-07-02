@@ -17,12 +17,12 @@ ONESIGNAL_APP_ID=
 Add this line to your `bootstrap/app.php` file
 
 ```php
-$app->register(\Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
+$app->register(Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
 
 // Register the facade (optional)
 // To use, must have $app->withFacades() enabled
 if (!class_exists('OneSignal')) {
-    class_alias(\Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
+    class_alias(Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
 }
 ```
 
@@ -79,13 +79,13 @@ class PodcastController extends Controller
         try {
             // Create a notification
             $oneSignal->notification()->create([
-                        'include_player_ids' => [$user->player_id],
-                        'contents' => ['en' => $request->content],
-                        'headings' => ['en' => 'Podcast created'],
-                        'data' => ['podcastId' => $podcast->id]
-                    ]);
+                'include_player_ids' => [$user->player_id],
+                'contents' => ['en' => $request->content],
+                'headings' => ['en' => 'Podcast created'],
+                'data' => ['podcastId' => $podcast->id]
+            ]);
         } catch (OneSignalException $exception) {
-            // Get any unexpected error here
+            // Catch any unexpected error
             \Log::error($exception->getMessage());
         }
         

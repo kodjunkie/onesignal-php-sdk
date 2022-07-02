@@ -6,9 +6,14 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
 class Notification extends AbstractBase
 {
+    // Kinds
     const DASHBOARD_ONLY = 0;
     const API_ONLY = 1;
     const AUTOMATED_ONLY = 3;
+
+    // Events
+    const SENT = 'sent';
+    const CLICKED = 'clicked';
 
     /**
      * View all notifications
