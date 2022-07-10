@@ -171,7 +171,7 @@ See: [https://documentation.onesignal.com/reference/add-a-device](https://docume
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
 
 $response = $oneSignal->device()->create([
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if "app_id" is already set in config
+    'app_id' => '', // optional if already provided in the config
     'device_type' => Device::IOS,
     'country' => 'US',
     'tags' => [
@@ -188,7 +188,7 @@ See: [https://documentation.onesignal.com/reference/edit-device](https://documen
 
 ```php
 $response = $oneSignal->device()->update($playerId, [
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if "app_id" is already set in config
+    'app_id' => '', // optional if already provided in the config
     'country' => 'NG',
     'tags' => [
         'full_name' => 'Jane Doe'
@@ -258,7 +258,7 @@ See: [https://documentation.onesignal.com/reference/create-notification](https:/
 
 ```php
 $response = $oneSignal->notification()->create([
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if "app_id" is already set in config
+    'app_id' => '', // optional if already provided in the config
     'include_player_ids' => [$playerId],
     'contents' => ['en' => 'Thank you for subscribing.'],
     'headings' => ['en' => 'Subscription success'],
