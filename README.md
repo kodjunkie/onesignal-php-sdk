@@ -13,7 +13,7 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 </div>
 
 - How to use this package? [Click here](https://github.com/kodjunkie/onesignal-php-sdk/tree/master/docs)
-- For official documentation [click here](https://documentation.onesignal.com/reference)
+- For the official documentation [click here](https://documentation.onesignal.com/reference)
 
 ## Why use this package?
 
@@ -21,7 +21,7 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 
 ## Installation
 
-**NOTE:** For `Laravel` users, this package registers itself automatically.
+**NOTE:** For `laravel` users, this package registers itself automatically.
 
 ```bash
 composer require kodjunkie/onesignal-php-sdk
@@ -34,13 +34,13 @@ use Kodjunkie\OnesignalPhpSdk\OneSignal;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 $config = [
-    // Onesignal API key
+    // Onesignal API Key
     'api_key' => '',
-    // Onesignal Auth key
+    // Onesignal Auth Key
     'auth_key' => '',
     // Onesignal App ID (optional)
     // this is beneficial if you're working with a single OneSignal app
-    // so, you could pass "null" to methods that requires it.
+    // so, you could pass "null" to methods / functions that requires it.
     'app_id' => '',
 ];
 
@@ -98,8 +98,8 @@ try {
     // Get all devices
     $response = $oneSignal->device()->getAll($appId, $limit, $offset);
     
-    // Using Facade, the code above will look like this
-    // With app_id provided in the config
+    // Using the facade, the code above will look like this
+    // with "app_id" provided in the config
     $response = OneSignal::device()->getAll(null, $limit, $offset);
     
     dd($response);

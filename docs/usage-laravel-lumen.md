@@ -1,6 +1,6 @@
 ## Usage in Laravel / Lumen
 
-**NOTE:** For `Laravel` users, this package registers itself automatically.
+**NOTE:** For `laravel` users, this package registers itself automatically.
 
 ### Configuration
 
