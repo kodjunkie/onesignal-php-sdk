@@ -45,9 +45,9 @@ provide it as argument to methods that requires it; the examples below assume yo
 
 ```php
 $config = [
-    // Onesignal API key
+    // Onesignal API Key
     'api_key' => '',
-    // Onesignal Auth key
+    // Onesignal Auth Key
     'auth_key' => '',
     // Onesignal App ID (optional)
     'app_id' => '',
@@ -86,8 +86,8 @@ See: [https://documentation.onesignal.com/reference/view-an-app](https://documen
 $response = $oneSignal->app()->get();
 
 // To get the details for a different app
-// Or when no app_id is provided in the config
-// Pass the app ID as an argument
+// or when no "app_id" is provided in the config
+// then pass the "app_id" as an argument
 $response = $oneSignal->app()->get($appId);
 ```
 
@@ -171,7 +171,7 @@ See: [https://documentation.onesignal.com/reference/add-a-device](https://docume
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
 
 $response = $oneSignal->device()->create([
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'app_id' => '', // optional if already provided in the config
     'device_type' => Device::IOS,
     'country' => 'US',
     'tags' => [
@@ -188,7 +188,7 @@ See: [https://documentation.onesignal.com/reference/edit-device](https://documen
 
 ```php
 $response = $oneSignal->device()->update($playerId, [
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'app_id' => '', // optional if already provided in the config
     'country' => 'NG',
     'tags' => [
         'full_name' => 'Jane Doe'
@@ -258,7 +258,7 @@ See: [https://documentation.onesignal.com/reference/create-notification](https:/
 
 ```php
 $response = $oneSignal->notification()->create([
-    'app_id' => 'xxx-xxx-xxx-xxx-xxx', // optional if app_id is already set in config
+    'app_id' => '', // optional if already provided in the config
     'include_player_ids' => [$playerId],
     'contents' => ['en' => 'Thank you for subscribing.'],
     'headings' => ['en' => 'Subscription success'],
