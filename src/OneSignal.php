@@ -7,7 +7,7 @@ use Kodjunkie\OnesignalPhpSdk\Endpoints\Device;
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Segment;
 
-class OneSignal extends AbstractService
+class OneSignal extends Service
 {
     /**
      * App API

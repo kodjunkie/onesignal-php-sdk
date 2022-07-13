@@ -4,7 +4,7 @@ namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
-class Notification extends AbstractBase
+class Notification extends Endpoint
 {
     // Kinds
     const DASHBOARD_ONLY = 0;

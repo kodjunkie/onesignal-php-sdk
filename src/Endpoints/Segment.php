@@ -4,7 +4,7 @@ namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
-class Segment extends AbstractBase
+class Segment extends Endpoint
 {
     /**
      * Create a new segment

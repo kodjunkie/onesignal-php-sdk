@@ -40,14 +40,4 @@ class OneSignalServiceProvider extends ServiceProvider
 
         $this->app->alias(OneSignal::class, 'onesignal');
     }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides(): array
-    {
-        return [OneSignal::class, 'onesignal'];
-    }
 }
