@@ -4,7 +4,7 @@ namespace Kodjunkie\OnesignalPhpSdk\Endpoints;
 
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
-class Device extends AbstractBase
+class Device extends Endpoint
 {
     const IOS = 0;
     const Android = 1;
