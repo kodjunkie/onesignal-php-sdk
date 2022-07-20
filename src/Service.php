@@ -36,7 +36,7 @@ abstract class Service
      */
     final protected function build($endpoint)
     {
-        $Endpoint = "\\Kodjunkie\\OnesignalPhpSdk\\Endpoints\\" . ucfirst($endpoint);
+        $Endpoint = __NAMESPACE__ . "\\Endpoints\\" . ucfirst($endpoint);
 
         if (!class_exists($Endpoint))
             throw new InvalidEndpointException("Endpoint not found [$endpoint].");
