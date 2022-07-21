@@ -47,6 +47,6 @@ abstract class Endpoint
         if (is_null($appId) && is_null($this->config['app_id']))
             throw new InvalidArgumentException('Missing required parameter [app_id].');
 
-        return is_null($appId) ? $this->config['app_id'] : $appId;
+        return is_null($appId) ? $this->config['app_id'] : trim($appId);
     }
 }
