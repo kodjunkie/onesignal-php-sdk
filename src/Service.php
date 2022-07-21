@@ -2,6 +2,7 @@
 
 namespace Kodjunkie\OnesignalPhpSdk;
 
+use Illuminate\Support\Arr;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidConfigurationException;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidEndpointException;
 use Kodjunkie\OnesignalPhpSdk\Http\GuzzleHttpClient;
@@ -9,7 +10,7 @@ use Kodjunkie\OnesignalPhpSdk\Http\GuzzleHttpClient;
 abstract class Service
 {
     /**
-     * @var string
+     * @var array
      */
     private $config;
 
@@ -19,11 +20,9 @@ abstract class Service
      */
     final public function __construct(array $config = [])
     {
-        $apiKey = array_key_exists('api_key', $config) ? $config['api_key'] : null;
-        $authKey = array_key_exists('auth_key', $config) ? $config['auth_key'] : null;
-
-        if (!$apiKey || !$authKey)
+        if (!Arr::has($config, ['api_key', 'auth_key'])) {
             throw new InvalidConfigurationException('Missing required credentials [api_key and/or auth_key].');
+        }
 
         $this->config = $config;
     }
@@ -36,7 +35,7 @@ abstract class Service
      */
     final protected function build($endpoint)
     {
-        $Endpoint = __NAMESPACE__ . "\\Endpoints\\" . ucfirst($endpoint);
+        $Endpoint = __NAMESPACE__ . "\\Endpoints\\" . trim($endpoint);
 
         if (!class_exists($Endpoint))
             throw new InvalidEndpointException("Endpoint not found [$endpoint].");

@@ -8,7 +8,7 @@ use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
 abstract class Endpoint
 {
     /**
-     * @var string
+     * @var array
      */
     protected $config;
 
@@ -24,11 +24,9 @@ abstract class Endpoint
     final public function __construct(ClientInterface $client, array $config = [])
     {
         $this->client = $client;
-        $this->config = [
-            'api_key' => trim($config['api_key']),
-            'auth_key' => trim($config['auth_key']),
-            'app_id' => isset($config['app_id']) ? trim($config['app_id']) : null,
-        ];
+        $this->config = array_merge($config, [
+            'app_id' => isset($config['app_id']) ? trim($config['app_id']) : null
+        ]);
     }
 
     /**
