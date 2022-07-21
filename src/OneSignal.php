@@ -16,7 +16,7 @@ class OneSignal extends Service
      */
     public function app(): App
     {
-        return $this->build('app');
+        return $this->build('App');
     }
 
     /**
@@ -26,7 +26,7 @@ class OneSignal extends Service
      */
     public function device(): Device
     {
-        return $this->build('device');
+        return $this->build('Device');
     }
 
     /**
@@ -36,7 +36,7 @@ class OneSignal extends Service
      */
     public function notification(): Notification
     {
-        return $this->build('notification');
+        return $this->build('Notification');
     }
 
     /**
@@ -46,6 +46,6 @@ class OneSignal extends Service
      */
     public function segment(): Segment
     {
-        return $this->build('segment');
+        return $this->build('Segment');
     }
 }
