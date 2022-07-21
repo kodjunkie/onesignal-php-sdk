@@ -20,9 +20,8 @@ abstract class Service
      */
     final public function __construct(array $config = [])
     {
-        if (!Arr::has($config, ['api_key', 'auth_key'])) {
+        if (!Arr::has($config, ['api_key', 'auth_key']))
             throw new InvalidConfigurationException('Missing required credentials [api_key and/or auth_key].');
-        }
 
         $this->config = $config;
     }
@@ -35,11 +34,9 @@ abstract class Service
      */
     final protected function build($endpoint)
     {
-        $Endpoint = __NAMESPACE__ . "\\Endpoints\\" . trim($endpoint);
-
-        if (!class_exists($Endpoint))
+        if (!class_exists($endpoint))
             throw new InvalidEndpointException("Endpoint not found [$endpoint].");
 
-        return new $Endpoint(new GuzzleHttpClient, $this->config);
+        return new $endpoint(new GuzzleHttpClient, $this->config);
     }
 }
