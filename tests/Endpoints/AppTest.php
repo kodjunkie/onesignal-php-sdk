@@ -80,7 +80,7 @@ class AppTest extends TestCase
 
     public function test_it_can_update_tags()
     {
-        $externalUserId = 1;
+        $externalUserId = 'external-user-id';
         $payload = ['country_code' => "NG", 'state' => "F.C.T"];
         $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
         $this->client->expects()->put('apps/' . $this->config['app_id'] . '/users/' . $externalUserId, ['tags' => $payload])->once()->andReturn(true);
