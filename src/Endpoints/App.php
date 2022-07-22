@@ -77,7 +77,7 @@ class App extends Endpoint
      */
     public function updateTags(array $tags, string $externalUserId, string $appId = null): string
     {
-        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . $externalUserId, [
+        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . trim($externalUserId), [
             'tags' => $tags
         ]);
     }
