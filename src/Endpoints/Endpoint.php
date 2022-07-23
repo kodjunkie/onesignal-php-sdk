@@ -24,9 +24,7 @@ abstract class Endpoint
     final public function __construct(ClientInterface $client, array $config = [])
     {
         $this->client = $client;
-        $this->config = array_merge($config, [
-            'app_id' => isset($config['app_id']) ? trim($config['app_id']) : null
-        ]);
+        $this->config = array_merge($config, ['app_id' => $config['app_id'] ?? null]);
     }
 
     /**
@@ -44,9 +42,9 @@ abstract class Endpoint
      */
     final protected function getAppId(string $appId = null): string
     {
-        if (is_null($appId) && is_null($this->config['app_id']))
+        if (!$appId && !$this->config['app_id'])
             throw new InvalidArgumentException('Missing required parameter [app_id].');
 
-        return is_null($appId) ? $this->config['app_id'] : trim($appId);
+        return trim($appId ?? $this->config['app_id']);
     }
 }
