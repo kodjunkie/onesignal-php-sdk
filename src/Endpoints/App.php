@@ -21,8 +21,8 @@ class App extends Endpoint
      * View an app
      * @param string|null $appId
      * @return string
-     * @see https://documentation.onesignal.com/reference/view-an-app
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/view-an-app
      */
     public function get(string $appId = null): string
     {
@@ -72,12 +72,12 @@ class App extends Endpoint
      * @param string $externalUserId
      * @param string|null $appId
      * @return string
-     * @see https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/edit-tags-with-external-user-id
      */
     public function updateTags(array $tags, string $externalUserId, string $appId = null): string
     {
-        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . trim($externalUserId), [
+        return $this->client()->put('apps/' . $this->getAppId($appId) . '/users/' . $externalUserId, [
             'tags' => $tags
         ]);
     }

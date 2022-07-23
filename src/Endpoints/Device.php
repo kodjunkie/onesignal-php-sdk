@@ -58,8 +58,8 @@ class Device extends Endpoint
      * Create a new device
      * @param array $body
      * @return string
-     * @see https://documentation.onesignal.com/reference/add-a-device
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/add-a-device
      */
     public function create(array $body): string
     {
@@ -73,8 +73,8 @@ class Device extends Endpoint
      * @param string $playerId
      * @param array $body
      * @return string
-     * https://documentation.onesignal.com/reference/edit-device
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/edit-device
      */
     public function update(string $playerId, array $body): string
     {
@@ -88,8 +88,8 @@ class Device extends Endpoint
      * @param string $playerId
      * @param string|null $appId
      * @return string
-     * https://documentation.onesignal.com/reference/delete-user-record
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/delete-user-record
      */
     public function delete(string $playerId, string $appId = null): string
     {
@@ -101,8 +101,8 @@ class Device extends Endpoint
      * @param string|null $appId
      * @param array $body
      * @return string
-     * https://documentation.onesignal.com/reference/csv-export
      * @throws InvalidArgumentException
+     * @see https://documentation.onesignal.com/reference/csv-export
      */
     public function export(string $appId = null, array $body = []): string
     {
