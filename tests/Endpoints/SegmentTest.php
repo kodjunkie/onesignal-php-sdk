@@ -46,18 +46,18 @@ class SegmentTest extends TestCase
         ];
 
         $this->client->expects()->post('apps/' . $this->config['app_id'] . '/segments', $payload)->once()->andReturn(true);
-        $isTrue = $this->segment->create($payload);
+        $success = (bool)$this->segment->create($payload);
 
-        $this->assertTrue((bool)$isTrue);
+        $this->assertTrue($success);
     }
 
     public function test_it_can_delete_a_segment()
     {
         $segmentId = 'demo-segment-id';
         $this->client->expects()->delete('apps/' . $this->config['app_id'] . '/segments/' . $segmentId)->once()->andReturn(true);
-        $isTrue = $this->segment->delete($segmentId);
+        $success = (bool)$this->segment->delete($segmentId);
 
-        $this->assertTrue((bool)$isTrue);
+        $this->assertTrue($success);
     }
 
     /**
