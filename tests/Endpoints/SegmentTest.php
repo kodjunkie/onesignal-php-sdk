@@ -46,8 +46,8 @@ class SegmentTest extends TestCase
         ];
 
         $this->client->expects()->post('apps/' . $this->config['app_id'] . '/segments', $payload)->once()->andReturn(true);
-        $success = (bool)$this->segment->create($payload);
 
+        $success = (bool)$this->segment->create($payload);
         $this->assertTrue($success);
     }
 
@@ -55,8 +55,8 @@ class SegmentTest extends TestCase
     {
         $segmentId = 'demo-segment-id';
         $this->client->expects()->delete('apps/' . $this->config['app_id'] . '/segments/' . $segmentId)->once()->andReturn(true);
-        $success = (bool)$this->segment->delete($segmentId);
 
+        $success = (bool)$this->segment->delete($segmentId);
         $this->assertTrue($success);
     }
 
