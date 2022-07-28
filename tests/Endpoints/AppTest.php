@@ -34,18 +34,24 @@ class AppTest extends TestCase
     {
         $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
         $this->client->expects()->get('apps')->once()->andReturn(true);
-        $isTrue = $this->app->getAll();
 
-        $this->assertTrue((bool)$isTrue);
+        $success = (bool)$this->app->getAll();
+        $this->assertTrue($success);
     }
 
     public function test_it_can_get_an_app()
     {
-        $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
-        $this->client->expects()->get('apps/' . $this->config['app_id'])->once()->andReturn(true);
-        $isTrue = $this->app->get();
+        $this->client->expects()->setAuthKey($this->config['auth_key'])->twice()->andReturn($this->client);
 
-        $this->assertTrue((bool)$isTrue);
+        // Called with the default config "app id"
+        $this->client->expects()->get('apps/' . $this->config['app_id'])->once()->andReturn(true);
+        $success = (bool)$this->app->get();
+        $this->assertTrue($success);
+
+        // Called with a custom "app id"
+        $appId = 'app-id';
+        $this->client->expects()->get('apps/' . $appId)->once()->andReturn(true);
+        $this->assertTrue((bool)$this->app->get($appId));
     }
 
     public function test_it_can_create_an_app()
@@ -53,9 +59,9 @@ class AppTest extends TestCase
         $payload = ['name' => 'Demo App'];
         $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
         $this->client->expects()->post('apps', $payload)->once()->andReturn(true);
-        $isTrue = $this->app->create($payload);
 
-        $this->assertTrue((bool)$isTrue);
+        $success = (bool)$this->app->create($payload);
+        $this->assertTrue($success);
     }
 
     public function test_it_can_update_an_app()
@@ -63,9 +69,9 @@ class AppTest extends TestCase
         $payload = ['name' => 'Updated App'];
         $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
         $this->client->expects()->put('apps/' . $this->config['app_id'], $payload)->once()->andReturn(true);
-        $isTrue = $this->app->update($payload);
 
-        $this->assertTrue((bool)$isTrue);
+        $success = (bool)$this->app->update($payload);
+        $this->assertTrue($success);
     }
 
     public function test_it_can_view_outcomes()
@@ -73,9 +79,9 @@ class AppTest extends TestCase
         $payload = ['outcome_names' => ['os__session_duration.count', 'os__click.count']];
         $this->client->expects()->setAuthKey($this->config['api_key'])->once()->andReturn($this->client);
         $this->client->expects()->get('apps/' . $this->config['app_id'] . '/outcomes', $payload)->once()->andReturn(true);
-        $isTrue = $this->app->outcomes(null, $payload);
 
-        $this->assertTrue((bool)$isTrue);
+        $success = (bool)$this->app->outcomes(null, $payload);
+        $this->assertTrue($success);
     }
 
     public function test_it_can_update_tags()
@@ -84,9 +90,9 @@ class AppTest extends TestCase
         $payload = ['country_code' => "NG", 'state' => "F.C.T"];
         $this->client->expects()->setAuthKey($this->config['auth_key'])->once()->andReturn($this->client);
         $this->client->expects()->put('apps/' . $this->config['app_id'] . '/users/' . $externalUserId, ['tags' => $payload])->once()->andReturn(true);
-        $isTrue = $this->app->updateTags($payload, $externalUserId);
 
-        $this->assertTrue((bool)$isTrue);
+        $success = (bool)$this->app->updateTags($payload, $externalUserId);
+        $this->assertTrue($success);
     }
 
     /**
