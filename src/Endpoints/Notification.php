@@ -12,8 +12,8 @@ class Notification extends Endpoint
     const AUTOMATED_ONLY = 3;
 
     // Event Type Constants
-    const SENT = 'sent';
-    const CLICKED = 'clicked';
+    const SENT_EVENT = 'sent';
+    const CLICKED_EVENT = 'clicked';
 
     /**
      * View all notifications
