@@ -6,12 +6,12 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
 class Notification extends Endpoint
 {
-    // Kinds
+    // Notification Kind Constants
     const DASHBOARD_ONLY = 0;
     const API_ONLY = 1;
     const AUTOMATED_ONLY = 3;
 
-    // Events
+    // Event Type Constants
     const SENT = 'sent';
     const CLICKED = 'clicked';
 
@@ -25,7 +25,7 @@ class Notification extends Endpoint
      * @throws InvalidArgumentException
      * @see https://documentation.onesignal.com/reference/view-notifications
      */
-    public function getAll(string $appId = null, int $limit = 50, int $offset = 0, int $kind = null): string
+    public function getAll(string $appId = null, int $limit = 100, int $offset = 0, int $kind = null): string
     {
         $kindArr = is_null($kind) ? [] : ['kind' => $kind];
         return $this->client()->get('notifications', array_merge([

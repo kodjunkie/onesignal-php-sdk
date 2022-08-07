@@ -6,6 +6,7 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
 class Device extends Endpoint
 {
+    // Device Type Constants
     const IOS = 0;
     const Android = 1;
     const Amazon = 2;
@@ -30,7 +31,7 @@ class Device extends Endpoint
      * @throws InvalidArgumentException
      * @see https://documentation.onesignal.com/reference/view-devices
      */
-    public function getAll(string $appId = null, int $limit = 300, int $offset = 0): string
+    public function getAll(string $appId = null, int $limit = 100, int $offset = 0): string
     {
         return $this->client()->get('players', [
             'app_id' => $this->getAppId($appId),
