@@ -19,7 +19,11 @@ class DeviceTest extends TestCase
     /**
      * @var array
      */
-    public $config = ['api_key' => "test-api-key", 'auth_key' => "test-auth-key", "app_id" => "test-app-id"];
+    public $config = [
+        'api_key' => "test-api-key",
+        'auth_key' => "test-auth-key",
+        "app_id" => "test-app-id"
+    ];
 
     /**
      * This method is called before each test.
@@ -36,7 +40,7 @@ class DeviceTest extends TestCase
     {
         $this->client->expects()->get('players', [
             'app_id' => $this->config['app_id'],
-            'limit' => 300,
+            'limit' => 100,
             'offset' => 0
         ])->once()->andReturn(true);
 
@@ -59,7 +63,7 @@ class DeviceTest extends TestCase
     {
         $payload = [
             'app_id' => $this->config['app_id'],
-            'device_type' => Device::Android,
+            'device_type' => Device::ANDROID,
             'country' => 'US',
             'tags' => [
                 'full_name' => 'John Doe'

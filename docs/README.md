@@ -285,7 +285,7 @@ See: [https://documentation.onesignal.com/reference/notification-history](https:
 ```php
 use Kodjunkie\OnesignalPhpSdk\Endpoints\Notification;
 
-$response = $oneSignal->notification()->history($notificationId, $email, Notification::CLICKED);
+$response = $oneSignal->notification()->history($notificationId, $email, Notification::CLICKED_EVENT);
 ```
 
 <a name="segment+create"></a>

@@ -86,7 +86,6 @@ if (!class_exists('OneSignal')) {
 #### Code samples
 
 ```php
-use Kodjunkie\OnesignalPhpSdk\OneSignal;
 use Kodjunkie\OnesignalPhpSdk\Exceptions\OneSignalException;
 
 try {
