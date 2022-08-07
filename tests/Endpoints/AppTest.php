@@ -19,7 +19,11 @@ class AppTest extends TestCase
     /**
      * @var array
      */
-    public $config = ['api_key' => "test-api-key", 'auth_key' => "test-auth-key", "app_id" => "test-app-id"];
+    public $config = [
+        'api_key' => "test-api-key",
+        'auth_key' => "test-auth-key",
+        "app_id" => "test-app-id"
+    ];
 
     /**
      * This method is called before each test.
