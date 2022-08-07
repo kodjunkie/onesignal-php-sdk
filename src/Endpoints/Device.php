@@ -8,18 +8,18 @@ class Device extends Endpoint
 {
     // Device Type Constants
     const IOS = 0;
-    const Android = 1;
-    const Amazon = 2;
-    const WindowsPhone = 3;
-    const ChromeApps = 4;
-    const ChromeWebPush = 5;
-    const Windows = 6;
-    const Safari = 7;
-    const Firefox = 8;
-    const MacOS = 9;
-    const Alexa = 10;
-    const Email = 11;
-    const Huawei = 13;
+    const ANDROID = 1;
+    const AMAZON = 2;
+    const WINDOWSPHONE = 3;
+    const CHROMEAPPS = 4;
+    const CHROMEWEBPUSH = 5;
+    const WINDOWS = 6;
+    const SAFARI = 7;
+    const FIREFOX = 8;
+    const MACOS = 9;
+    const ALEXA = 10;
+    const EMAIL = 11;
+    const HUAWEI = 13;
     const SMS = 14;
 
     /**
