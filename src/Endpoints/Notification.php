@@ -6,12 +6,12 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
 class Notification extends Endpoint
 {
-    // Notification Kind Constants
+    // Notification Kinds
     const DASHBOARD_ONLY = 0;
     const API_ONLY = 1;
     const AUTOMATED_ONLY = 3;
 
-    // Event Type Constants
+    // Event Types
     const SENT_EVENT = 'sent';
     const CLICKED_EVENT = 'clicked';
 
