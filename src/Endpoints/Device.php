@@ -6,7 +6,7 @@ use Kodjunkie\OnesignalPhpSdk\Exceptions\InvalidArgumentException;
 
 class Device extends Endpoint
 {
-    // Device Type Constants
+    // Device Types
     const IOS = 0;
     const ANDROID = 1;
     const AMAZON = 2;
