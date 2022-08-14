@@ -112,8 +112,8 @@ class GuzzleHttpClient implements ClientInterface
     private function request(string $method, string $uri, array $options = []): string
     {
         try {
-            $response = $this->client()->request($method, $uri, $options);
-            $response = $response->getBody()->getContents();
+            $request = $this->client()->request($method, $uri, $options);
+            $response = $request->getBody()->getContents();
         } catch (ClientException $exception) {
             $response = $exception->getResponse()->getBody()->getContents();
         } catch (GuzzleException $exception) {
