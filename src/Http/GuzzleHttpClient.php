@@ -102,7 +102,7 @@ class GuzzleHttpClient implements ClientInterface
     }
 
     /**
-     * Build the request
+     * Make the request
      * @param string $method
      * @param string $uri
      * @param array $options
