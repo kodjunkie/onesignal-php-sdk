@@ -31,7 +31,7 @@ class Device extends Endpoint
      * @throws InvalidArgumentException
      * @see https://documentation.onesignal.com/reference/view-devices
      */
-    public function getAll(string $appId = null, int $limit = self::LIMIT, int $offset = self::OFFSET): string
+    public function getAll(string $appId = null, int $limit = 300, int $offset = 0): string
     {
         return $this->client()->get('players', [
             'app_id' => $this->getAppId($appId),
