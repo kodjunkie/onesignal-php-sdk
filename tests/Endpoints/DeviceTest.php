@@ -40,7 +40,7 @@ class DeviceTest extends TestCase
     {
         $this->client->expects()->get('players', [
             'app_id' => $this->config['app_id'],
-            'limit' => 50,
+            'limit' => 300,
             'offset' => 0
         ])->once()->andReturn(true);
 
