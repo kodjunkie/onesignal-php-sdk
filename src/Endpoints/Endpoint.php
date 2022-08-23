@@ -7,10 +7,6 @@ use Kodjunkie\OnesignalPhpSdk\Http\ClientInterface;
 
 abstract class Endpoint
 {
-    // Pagination
-    protected const OFFSET = 0;
-    protected const LIMIT = 50;
-
     /**
      * @var array
      */
