@@ -25,7 +25,7 @@ class Notification extends Endpoint
      * @throws InvalidArgumentException
      * @see https://documentation.onesignal.com/reference/view-notifications
      */
-    public function getAll(string $appId = null, int $limit = 100, int $offset = 0, int $kind = null): string
+    public function getAll(string $appId = null, int $limit = 50, int $offset = 0, int $kind = null): string
     {
         $kindArr = is_null($kind) ? [] : ['kind' => $kind];
         return $this->client()->get('notifications', array_merge([

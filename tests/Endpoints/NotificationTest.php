@@ -40,7 +40,7 @@ class NotificationTest extends TestCase
     {
         $this->client->expects()->get('notifications', [
             'app_id' => $this->config['app_id'],
-            'limit' => 100,
+            'limit' => 50,
             'offset' => 0
         ])->once()->andReturn(true);
 
