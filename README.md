@@ -17,7 +17,7 @@ OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen ou
 
 ## Why use this package?
 
-> This is the only package out there that is unambiguous to set up, and has a fluent / straightforward API.
+> This is the only package out there that is a breeze to set up, and have a fluent / standardized API across endpoints.
 
 ## Installation
 
