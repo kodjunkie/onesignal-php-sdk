@@ -8,7 +8,7 @@
 
 OneSignal SDK for PHP developers with fluent API and supports Laravel / Lumen out of the box.
 
-[![Latest Stable Version](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/v)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![Total Downloads](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/downloads)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![PHP Version Require](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/require/php)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![tests](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml) <a href="https://github.com/kodjunkie/onesignal-php-sdk/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-red.svg" alt="license: MIT" height="20"></a>
+[![Latest Stable Version](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/v)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![PHP Version Require](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/require/php)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![Total Downloads](http://poser.pugx.org/kodjunkie/onesignal-php-sdk/downloads)](https://packagist.org/packages/kodjunkie/onesignal-php-sdk) [![tests](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml/badge.svg?branch=master)](https://github.com/kodjunkie/onesignal-php-sdk/actions/workflows/php.yml) <a href="https://github.com/kodjunkie/onesignal-php-sdk/blob/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-red.svg" alt="license: MIT" height="20"></a>
 
 </div>
 
@@ -77,7 +77,7 @@ Add this line to your `bootstrap/app.php` file
 $app->register(Kodjunkie\OnesignalPhpSdk\OneSignalServiceProvider::class);
 
 // Register the facade (optional)
-// To use, must have $app->withFacades() enabled
+// To use, must uncomment $app->withFacades()
 if (!class_exists('OneSignal')) {
     class_alias(Kodjunkie\OnesignalPhpSdk\Facade::class, 'OneSignal');
 }
